@@ -17,3 +17,9 @@ git clone https://github.com/wbthomason/packer.nvim "$env:LOCALAPPDATA\nvim-data
 | gy       | Copy absolute path     |
 | y        | Copy file/folder name  |
 | Y        | Copy relative path     |
+### Git
+| Command    | Usage           |
+|------------|-----------------|
+| <leader>gs | Open git status |
+| <leader>gd | Show git diff   |
+| <leader>gb | Show git blame  |
