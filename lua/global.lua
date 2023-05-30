@@ -7,3 +7,6 @@ opt.shiftwidth = 2
 -- show relative line number
 opt.number = true
 opt.relativenumber = true
+
+-- set termguicolors to enable highlight groups
+vim.opt.termguicolors = true
