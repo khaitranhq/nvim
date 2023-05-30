@@ -32,3 +32,11 @@ require('lualine').setup {
 		theme = 'tokyonight'
 	}
 }
+
+-----------------------------------------------
+------------------- GIT -----------------------
+-----------------------------------------------
+vim.api.nvim_set_keymap("n", "<leader>gs", ":G<cr>", {})
+vim.api.nvim_set_keymap("n", "<leader>gd", ":Gdiffsplit<cr>", {})
+vim.api.nvim_set_keymap("n", "<leader>gc", ":Git commit<cr>", {})
+vim.api.nvim_set_keymap("n", "<leader>gb", ":Gblame<cr>", {})

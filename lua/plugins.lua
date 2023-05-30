@@ -23,4 +23,7 @@ return require('packer').startup(function(use)
 		}
 	}
 
+	-- Git manager
+	use "tpope/vim-fugitive"
+
 end)
