@@ -18,3 +18,9 @@ require("nvim-tree").setup(
     }
 )
 vim.api.nvim_set_keymap("", "<c-b>", ":NvimTreeToggle<CR>", {})
+
+-----------------------------------------------
+--------------- TOKYONIGHT --------------------
+-----------------------------------------------
+vim.cmd[[colorscheme tokyonight-moon]]
+

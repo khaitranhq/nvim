@@ -11,4 +11,7 @@ return require('packer').startup(function(use)
 			'nvim-tree/nvim-web-devicons', -- optional
 		},
   }
+
+	-- Theme
+	use 'folke/tokyonight.nvim'
 end)
