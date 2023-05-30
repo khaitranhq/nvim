@@ -14,4 +14,13 @@ return require('packer').startup(function(use)
 
 	-- Theme
 	use 'folke/tokyonight.nvim'
+
+	-- Status line
+	use {
+		'nvim-lualine/lualine.nvim',
+		requires = { 
+			'nvim-tree/nvim-web-devicons', opt = true 
+		}
+	}
+
 end)

@@ -24,3 +24,11 @@ vim.api.nvim_set_keymap("", "<c-b>", ":NvimTreeToggle<CR>", {})
 -----------------------------------------------
 vim.cmd[[colorscheme tokyonight-moon]]
 
+-----------------------------------------------
+----------------- LUALINE ---------------------
+-----------------------------------------------
+require('lualine').setup {
+	options = {
+		theme = 'tokyonight'
+	}
+}
