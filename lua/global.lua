@@ -19,3 +19,6 @@ vim.api.nvim_set_keymap("", "<c-l>", ":wincmd l<cr>", {noremap = true})
 
 -- Short key to quit
 vim.api.nvim_set_keymap("", "qq", ":qa<cr>", {noremap = true})
+
+-- Change leader key
+vim.g.mapleader = " "
