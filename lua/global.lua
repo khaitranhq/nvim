@@ -16,3 +16,6 @@ vim.api.nvim_set_keymap("", "<c-k>", ":wincmd k<cr>", {noremap = true})
 vim.api.nvim_set_keymap("", "<c-j>", ":wincmd j<cr>", {noremap = true})
 vim.api.nvim_set_keymap("", "<c-h>", ":wincmd h<cr>", {noremap = true})
 vim.api.nvim_set_keymap("", "<c-l>", ":wincmd l<cr>", {noremap = true})
+
+-- Short key to quit
+vim.api.nvim_set_keymap("", "qq", ":qa<cr>", {noremap = true})
