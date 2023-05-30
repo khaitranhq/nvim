@@ -22,3 +22,7 @@ vim.api.nvim_set_keymap("", "qq", ":qa<cr>", {noremap = true})
 
 -- Change leader key
 vim.g.mapleader = " "
+
+-- Short key to run commands
+vim.api.nvim_set_keymap("n", ";", ":", {noremap = true})
+
