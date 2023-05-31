@@ -19,7 +19,7 @@ return require('packer').startup(function(use)
 	use {
 		'nvim-lualine/lualine.nvim',
 		requires = { 
-			'nvim-tree/nvim-web-devicons', opt = true 
+			'nvim-tree/nvim-web-devicons', opt = true
 		}
 	}
 
@@ -34,8 +34,9 @@ return require('packer').startup(function(use)
 
 	-- Install neccessary packages
 	use "williamboman/mason.nvim"
+	use "williamboman/mason-lspconfig.nvim"
 
 	-- Configs for LSP
-	use "neovim/nvim-lspconfig" 
+	use "neovim/nvim-lspconfig"
 
 end)
