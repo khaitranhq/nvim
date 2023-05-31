@@ -13,7 +13,7 @@ Install MingW by Chocolate with Admin Powershell
 ```choco install mingw```
 ### Install formatters
 ```
-npm install -g prettier
+npm install -g prettier lua-fmt
 pip install --upgrade yapf
 
 ```
@@ -52,5 +52,9 @@ pip install --upgrade yapf
 | Select text and Leader + g | Grep in current file with selected text |
 | Select text and Leader + G | Grep in all files with selected text    |
 ### Comment
+| Command/key     | Usage                       |
+|-----------------|-----------------------------|
+| gcc             | Toggle comment current line |
+| [Visual mod] gc | Toggle comment in a block   |
 ### Outline
 https://github.com/simrat39/symbols-outline.nvim

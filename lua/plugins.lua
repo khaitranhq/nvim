@@ -55,8 +55,8 @@ return require("packer").startup(
             run = ":TSUpdate"
         }
 
-				-- Tag/pairs
-				use {
+        -- Tag/pairs
+        use {
             "windwp/nvim-autopairs",
             config = function()
                 require("nvim-autopairs").setup {}
@@ -64,5 +64,6 @@ return require("packer").startup(
         }
         use "windwp/nvim-ts-autotag"
 
+        use "numToStr/Comment.nvim"
     end
 )
