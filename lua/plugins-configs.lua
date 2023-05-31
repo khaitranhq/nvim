@@ -46,6 +46,14 @@ vim.api.nvim_set_keymap("n", "<leader>gb", ":Gblame<cr>", {})
 -----------------------------------------------
 ----------------- TELESCOPE -------------------
 -----------------------------------------------
+local telescope = require("telescope")
+
+telescope.setup {
+    defaults = {
+        file_ignore_patterns = {".git", "node_modules", "dist", "venv", ".venv"}
+    }
+}
+
 local builtin = require('telescope.builtin')
 
 function vim.getVisualSelection()
