@@ -64,6 +64,10 @@ return require("packer").startup(
         }
         use "windwp/nvim-ts-autotag"
 
+				-- Comment code
         use "numToStr/Comment.nvim"
+
+				-- Outline
+				use 'simrat39/symbols-outline.nvim'
     end
 )

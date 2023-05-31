@@ -57,4 +57,4 @@ pip install --upgrade yapf
 | gcc             | Toggle comment current line |
 | [Visual mod] gc | Toggle comment in a block   |
 ### Outline
-https://github.com/simrat39/symbols-outline.nvim
+Command `:SymbolsOutline` to toggle Symbols Outline.  Use key `h` and `l` to fold and unfold
