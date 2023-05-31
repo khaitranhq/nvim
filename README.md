@@ -6,6 +6,17 @@
 ```
 git clone https://github.com/wbthomason/packer.nvim "$env:LOCALAPPDATA\nvim-data\site\pack\packer\start\packer.nvim"
 ```
+#### Node.js
+Download installer [here](https://nodejs.org/en/download). It will also install *Python*
+### Install formatters
+```
+npm install -g prettier
+pip install --upgrade yapf
+
+```
+### Install plugins
+- Open nvim
+- Run command `:PackerInstall`
 ## Usage 🎆
 ### Miscellaneous
 ### Nvim-tree
@@ -23,3 +34,8 @@ git clone https://github.com/wbthomason/packer.nvim "$env:LOCALAPPDATA\nvim-data
 | <leader>gs | Open git status |
 | <leader>gd | Show git diff   |
 | <leader>gb | Show git blame  |
+### LSP and format
+| Command    | Usage            |
+|------------|------------------|
+| <leader>rn | Rename variables |
+| <leader>fm | Format code      |
