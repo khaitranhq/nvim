@@ -8,8 +8,12 @@ opt.shiftwidth = 2
 opt.number = true
 opt.relativenumber = true
 
+-- Set clipboard
+opt.clipboard = "unnamed,unnamedplus"
+
 -- set termguicolors to enable highlight groups
-vim.opt.termguicolors = true
+opt.termguicolors = true
+
 
 -- Move between splitted tabs
 vim.api.nvim_set_keymap("", "<c-k>", ":wincmd k<cr>", {noremap = true})
