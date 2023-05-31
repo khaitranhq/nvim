@@ -24,15 +24,15 @@ keymap("", "<c-b>", ":NvimTreeToggle<CR>", {})
 -----------------------------------------------
 --------------- TOKYONIGHT --------------------
 -----------------------------------------------
-vim.cmd[[colorscheme tokyonight-moon]]
+vim.cmd [[colorscheme tokyonight-moon]]
 
 -----------------------------------------------
 ----------------- LUALINE ---------------------
 -----------------------------------------------
-require('lualine').setup {
-	options = {
-		theme = 'tokyonight'
-	}
+require("lualine").setup {
+    options = {
+        theme = "tokyonight"
+    }
 }
 
 -----------------------------------------------
@@ -54,7 +54,7 @@ telescope.setup {
     }
 }
 
-local builtin = require('telescope.builtin')
+local builtin = require("telescope.builtin")
 
 function vim.getVisualSelection()
     vim.cmd('noau normal! "vy"')
@@ -71,9 +71,9 @@ end
 
 local opts = {noremap = true, silent = true}
 
-keymap('n', '<c-f>', builtin.find_files, {})
-keymap('n', '<c-g>', builtin.live_grep, {})
-keymap('n', '<leader>f', builtin.buffers, {})
+keymap("n", "<c-f>", builtin.find_files, {})
+keymap("n", "<c-g>", builtin.live_grep, {})
+keymap("n", "<leader>f", builtin.buffers, {})
 keymap("n", "<leader>gf", builtin.current_buffer_fuzzy_find, opts)
 keymap(
     "v",
@@ -100,15 +100,14 @@ keymap(
 -----------------------------------------------
 require("mason").setup()
 require("mason-lspconfig").setup {
-    ensure_installed = { "lua_ls", "tsserver", "pyright" },
+    ensure_installed = {"lua_ls", "tsserver", "pyright"}
 }
-
 
 -----------------------------------------------
 ------------------- LSP -----------------------
 -----------------------------------------------
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
-local lspconfig = require('lspconfig')
+local lspconfig = require("lspconfig")
 
 lspconfig.lua_ls.setup {
     settings = {
@@ -118,56 +117,68 @@ lspconfig.lua_ls.setup {
             }
         }
     },
-		capabilities = capabilities,
+    capabilities = capabilities
 }
 lspconfig.pyright.setup {
-    capabilities = capabilities,
-	}
+    capabilities = capabilities
+}
 lspconfig.tsserver.setup {
-    capabilities = capabilities,
-	}
+    capabilities = capabilities
+}
 
 -- Rename variables
 keymap("n", "<leader>rn", vim.lsp.buf.rename, {noremap = true})
 
-
 -- luasnip setup
-local luasnip = require 'luasnip'
+local luasnip = require "luasnip"
 
 -- nvim-cmp setup
-local cmp = require 'cmp'
+local cmp = require "cmp"
 cmp.setup {
-  snippet = {
-    expand = function(args)
-      luasnip.lsp_expand(args.body)
-    end,
-  },
-  mapping = cmp.mapping.preset.insert({
-    ['<CR>'] = cmp.mapping.confirm {
-      behavior = cmp.ConfirmBehavior.Replace,
-      select = true,
+    snippet = {
+        expand = function(args)
+            luasnip.lsp_expand(args.body)
+        end
     },
-    ['<Tab>'] = cmp.mapping(function(fallback)
-      if cmp.visible() then
-        cmp.select_next_item()
-      elseif luasnip.expand_or_jumpable() then
-        luasnip.expand_or_jump()
-      else
-        fallback()
-      end
-    end, { 'i', 's' }),
-    ['<S-Tab>'] = cmp.mapping(function(fallback)
-      if cmp.visible() then
-        cmp.select_prev_item()
-      elseif luasnip.jumpable(-1) then
-        luasnip.jump(-1)
-      else
-        fallback()
-      end
-    end, { 'i', 's' }),
-  }),
-  sources = {
-    { name = 'nvim_lsp' },
-    { name = 'luasnip' },
-  },
+    mapping = cmp.mapping.preset.insert(
+        {
+            ["<CR>"] = cmp.mapping.confirm {
+                behavior = cmp.ConfirmBehavior.Replace,
+                select = true
+            },
+            ["<Tab>"] = cmp.mapping(
+                function(fallback)
+                    if cmp.visible() then
+                        cmp.select_next_item()
+                    elseif luasnip.expand_or_jumpable() then
+                        luasnip.expand_or_jump()
+                    else
+                        fallback()
+                    end
+                end,
+                {"i", "s"}
+            ),
+            ["<S-Tab>"] = cmp.mapping(
+                function(fallback)
+                    if cmp.visible() then
+                        cmp.select_prev_item()
+                    elseif luasnip.jumpable(-1) then
+                        luasnip.jump(-1)
+                    else
+                        fallback()
+                    end
+                end,
+                {"i", "s"}
+            )
+        }
+    ),
+    sources = {
+        {name = "nvim_lsp"},
+        {name = "luasnip"}
+    }
 }
+
+-----------------------------------------------
+---------------- NEOFORMAT --------------------
+-----------------------------------------------
+keymap("n", "<leader>fm", ":Neoformat<cr>", {})
