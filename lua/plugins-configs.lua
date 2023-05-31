@@ -187,7 +187,7 @@ keymap("n", "<leader>fm", ":Neoformat<cr>", {})
 -----------------------------------------------
 require "nvim-treesitter.configs".setup {
     -- A list of parser names, or "all"
-    ensure_installed = {"python", "typescript", "javascript"},
+    ensure_installed = {"python", "typescript", "javascript", "html", "tsx"},
     -- Install parsers synchronously (only applied to `ensure_installed`)
     sync_install = true,
     -- Automatically install missing parsers when entering buffer
@@ -214,6 +214,7 @@ require "nvim-treesitter.configs".setup {
         enable = true
     }
 }
+require 'nvim-treesitter.install'.compilers = { "clang" }
 
 -----------------------------------------------
 ----------------- COMMENT ---------------------
@@ -225,3 +226,16 @@ require("Comment").setup()
 -----------------------------------------------
 require("symbols-outline").setup()
 
+-----------------------------------------------
+---------------- AUTOPAIR ---------------------
+-----------------------------------------------
+local status, autopairs = pcall(require, "nvim-autopairs")
+if not status then
+    return
+end
+
+autopairs.setup(
+    {
+        disable_filetype = {"TelescopePrompt", "vim"}
+    }
+)
