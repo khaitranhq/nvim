@@ -48,5 +48,21 @@ return require("packer").startup(
 
         -- Format code
         use "sbdchd/neoformat"
+
+        -- Syntax
+        use {
+            "nvim-treesitter/nvim-treesitter",
+            run = ":TSUpdate"
+        }
+
+				-- Tag/pairs
+				use {
+            "windwp/nvim-autopairs",
+            config = function()
+                require("nvim-autopairs").setup {}
+            end
+        }
+        use "windwp/nvim-ts-autotag"
+
     end
 )
