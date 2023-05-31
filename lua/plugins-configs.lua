@@ -84,7 +84,6 @@ keymap(
     end,
     opts
 )
-keymap("n", "<space>G", ":Telescope live_grep<cr>", opts)
 keymap(
     "v",
     "<space>G",
