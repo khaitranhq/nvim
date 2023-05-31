@@ -8,6 +8,9 @@ git clone https://github.com/wbthomason/packer.nvim "$env:LOCALAPPDATA\nvim-data
 ```
 #### Node.js
 Download installer [here](https://nodejs.org/en/download). It will also install *Python*
+#### C compiler
+Install MingW by Chocolate with Admin Powershell
+```choco install mingw```
 ### Install formatters
 ```
 npm install -g prettier
@@ -39,3 +42,7 @@ pip install --upgrade yapf
 |------------|------------------|
 | <leader>rn | Rename variables |
 | <leader>fm | Format code      |
+### Telescope
+TODO
+### Comment
+TODO
