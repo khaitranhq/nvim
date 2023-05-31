@@ -43,8 +43,14 @@ pip install --upgrade yapf
 | <leader>rn | Rename variables |
 | <leader>fm | Format code      |
 ### Telescope
-TODO
+| Command                    | Usage                                   |
+|----------------------------|-----------------------------------------|
+| Ctrl + f                   | Find files                              |
+| Ctrl + g                   | Grep file                               |
+| Leader + b                 | Buffers                                 |
+| Leader + gf                | Grep in current file (deprecated)       |
+| Select text and Leader + g | Grep in current file with selected text |
+| Select text and Leader + G | Grep in all files with selected text    |
 ### Comment
-TODO
 ### Outline
 https://github.com/simrat39/symbols-outline.nvim
