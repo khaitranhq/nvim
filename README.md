@@ -46,3 +46,5 @@ pip install --upgrade yapf
 TODO
 ### Comment
 TODO
+### Outline
+https://github.com/simrat39/symbols-outline.nvim
