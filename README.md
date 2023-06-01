@@ -10,7 +10,7 @@ git clone https://github.com/wbthomason/packer.nvim "$env:LOCALAPPDATA\nvim-data
 Download installer [here](https://nodejs.org/en/download). It will also install *Python*
 #### C compiler
 Install MingW by Chocolate with Admin Powershell
-```choco install mingw```
+```choco install llvm```
 ### Install formatters
 ```
 npm install -g prettier lua-fmt
