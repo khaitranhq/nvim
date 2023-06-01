@@ -64,10 +64,20 @@ return require("packer").startup(
         }
         use "windwp/nvim-ts-autotag"
 
-				-- Comment code
+        -- Comment code
         use "numToStr/Comment.nvim"
 
-				-- Outline
-				use 'simrat39/symbols-outline.nvim'
+        -- Outline
+        use "simrat39/symbols-outline.nvim"
+
+        -- Markdown Preview
+        use(
+            {
+                "iamcco/markdown-preview.nvim",
+                run = function()
+                    vim.fn["mkdp#util#install"]()
+                end
+            }
+        )
     end
 )
