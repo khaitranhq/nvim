@@ -80,7 +80,10 @@ return require("packer").startup(
             }
         )
 
-				-- Indent blank line
-				use "lukas-reineke/indent-blankline.nvim"
+        -- Indent blank line
+        use "lukas-reineke/indent-blankline.nvim"
+
+        -- Some utilize short keys
+        use "tpope/vim-surround"
     end
 )
