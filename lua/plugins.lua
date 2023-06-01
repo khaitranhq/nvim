@@ -46,9 +46,6 @@ return require("packer").startup(
         use "saadparwaiz1/cmp_luasnip" -- Snippets source for nvim-cmp
         use "L3MON4D3/LuaSnip" -- Snippets plugin
 
-        -- Format code
-        use "sbdchd/neoformat"
-
         -- Syntax
         use {
             "nvim-treesitter/nvim-treesitter",
