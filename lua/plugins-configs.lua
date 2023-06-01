@@ -181,6 +181,7 @@ cmp.setup {
 
 vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]
 
+vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, {})
 -----------------------------------------------
 --------------- TREESITTER --------------------
 -----------------------------------------------
