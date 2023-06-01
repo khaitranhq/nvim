@@ -79,5 +79,8 @@ return require("packer").startup(
                 end
             }
         )
+
+				-- Indent blank line
+				use "lukas-reineke/indent-blankline.nvim"
     end
 )
