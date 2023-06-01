@@ -179,9 +179,8 @@ cmp.setup {
 	}
 }
 
-vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]
-
 vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, {})
+
 -----------------------------------------------
 --------------- TREESITTER --------------------
 -----------------------------------------------
@@ -261,3 +260,8 @@ require("bufferline").setup {
 		end
 	}
 }
+
+-----------------------------------------------
+---------------- NEOFORMAT --------------------
+-----------------------------------------------
+vim.api.nvim_set_keymap("n", "<leader>fm", ":Neoformat<cr>", {})
