@@ -179,7 +179,9 @@ cmp.setup {
 	}
 }
 
-vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, {})
+keymap("n", "<leader>e", vim.diagnostic.open_float, {})
+keymap("n", "<leader>d", vim.lsp.buf.hover)
+
 
 -----------------------------------------------
 --------------- TREESITTER --------------------
