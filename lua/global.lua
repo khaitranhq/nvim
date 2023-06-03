@@ -14,6 +14,10 @@ opt.clipboard = "unnamed,unnamedplus"
 -- set termguicolors to enable highlight groups
 opt.termguicolors = true
 
+-- set foldmethod
+opt.foldmethod = "indent"
+opt.foldlevel=20
+
 
 -- Move between splitted tabs
 vim.api.nvim_set_keymap("", "<c-k>", ":wincmd k<cr>", {noremap = true})
