@@ -34,3 +34,8 @@ vim.g.mapleader = " "
 -- Short key to run commands
 vim.api.nvim_set_keymap("n", ";", ":", {noremap = true})
 
+-- Resize buffer
+vim.api.nvim_set_keymap('', '<leader>.', '<C-W>>',{noremap=true})
+vim.api.nvim_set_keymap('', '<leader>,', '<C-W><',{noremap=true})
+vim.api.nvim_set_keymap('', '<leader>-', '<C-W>-',{noremap=true})
+vim.api.nvim_set_keymap('', '<leader>=', '<C-W>+',{noremap=true})
