@@ -130,6 +130,10 @@ lspconfig.tsserver.setup {
 -- Rename variables
 keymap("n", "<leader>rn", vim.lsp.buf.rename, { noremap = true })
 
+-- Move between diagnostic messages
+keymap('n', '[d', vim.diagnostic.goto_prev)
+keymap('n', ']d', vim.diagnostic.goto_next)
+
 -- luasnip setup
 local luasnip = require "luasnip"
 
