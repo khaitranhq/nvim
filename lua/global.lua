@@ -39,3 +39,6 @@ vim.api.nvim_set_keymap('', '<leader>.', '<C-W>>',{noremap=true})
 vim.api.nvim_set_keymap('', '<leader>,', '<C-W><',{noremap=true})
 vim.api.nvim_set_keymap('', '<leader>-', '<C-W>-',{noremap=true})
 vim.api.nvim_set_keymap('', '<leader>=', '<C-W>+',{noremap=true})
+
+-- Search with current select text
+vim.api.nvim_set_keymap("v", "//", "y/\\V<C-R>=escape(@\",'/\')<CR><CR>", {noremap = true})
