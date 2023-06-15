@@ -42,3 +42,6 @@ vim.api.nvim_set_keymap('', '<leader>=', '<C-W>+',{noremap=true})
 
 -- Search with current select text
 vim.api.nvim_set_keymap("v", "//", "y/\\V<C-R>=escape(@\",'/\')<CR><CR>", {noremap = true})
+
+-- Get path of current file
+vim.api.nvim_create_user_command('Cwd', 'echo @%', {})
