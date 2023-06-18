@@ -90,8 +90,5 @@ return require("packer").startup(
 
         -- Format code
         use "sbdchd/neoformat"
-
-        -- Store sessions
-        use "rmagatti/auto-session"
     end
 )
