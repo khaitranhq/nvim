@@ -87,3 +87,12 @@ pip install --upgrade yapf
 ### Outline
 
 Command `:SymbolsOutline` to toggle Symbols Outline. Use key `h` and `l` to fold and unfold
+
+### Motion
+
+| Command    | Usage                           |
+|------------|---------------------------------|
+| Leader + hw | Fastly move to words            |
+| Leader + hl | Fastly move to begin of lines   |
+| Leader + hp | Fastly move with search pattern |
+| Leader + hv | Fastly move in vertical column  |
