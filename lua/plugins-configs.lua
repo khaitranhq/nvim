@@ -279,4 +279,12 @@ vim.api.nvim_set_keymap("n", "<leader>fm", ":Neoformat<cr>", {})
 -----------------------------------------------
 ------------------ MOTION ---------------------
 -----------------------------------------------
-require'hop'.setup {}
+local hop = require('hop')
+hop.setup {}
+keymap('n', '<leader>hl', hop.hint_lines, {})
+keymap('n', '<leader>hp', hop.hint_patterns, {})
+keymap('n', '<leader>hw', hop.hint_words, {})
+keymap('n', '<leader>hv', hop.hint_vertical, {})
+
+require("focus").setup()
+
