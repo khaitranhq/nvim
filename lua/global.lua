@@ -45,3 +45,6 @@ vim.api.nvim_set_keymap("v", "//", "y/\\V<C-R>=escape(@\",'/\')<CR><CR>", {norem
 
 -- Get path of current file
 vim.api.nvim_create_user_command('Cwd', 'echo @%', {})
+
+-- Convert file from win to unix style 
+vim.api.nvim_set_keymap('n', '<leader>du', ':!dos2unix %<CR>', {silent = true})
