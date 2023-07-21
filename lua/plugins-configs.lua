@@ -56,7 +56,12 @@ local telescope = require("telescope")
 telescope.setup {
     defaults = {
         file_ignore_patterns = {".git", "node_modules", "dist", "venv", ".venv"}
-    }
+    },
+		pickers = {
+				find_files = {
+						hidden = true
+				}
+		}
 }
 
 local builtin = require("telescope.builtin")
