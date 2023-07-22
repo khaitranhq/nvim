@@ -117,5 +117,12 @@ return require("packer").startup(
                 "nvim-telescope/telescope.nvim" -- Optional
             }
         }
+
+        use {
+            "folke/trouble.nvim",
+            requires = {
+                "nvim-tree/nvim-web-devicons"
+            }
+        }
     end
 )
