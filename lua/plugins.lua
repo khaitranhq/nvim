@@ -101,9 +101,21 @@ return require("packer").startup(
         }
 
         use {
-						"beauwilliams/focus.nvim", config = function()
+            "beauwilliams/focus.nvim",
+            config = function()
                 require("focus").setup()
             end
-				}
+        }
+
+        use {
+            "SmiteshP/nvim-navbuddy",
+            requires = {
+                "neovim/nvim-lspconfig",
+                "SmiteshP/nvim-navic",
+                "MunifTanjim/nui.nvim",
+                "numToStr/Comment.nvim", -- Optional
+                "nvim-telescope/telescope.nvim" -- Optional
+            }
+        }
     end
 )

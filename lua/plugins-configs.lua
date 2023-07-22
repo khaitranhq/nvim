@@ -57,11 +57,11 @@ telescope.setup {
     defaults = {
         file_ignore_patterns = {".git", "node_modules", "dist", "venv", ".venv"}
     },
-		pickers = {
-				find_files = {
-						hidden = true
-				}
-		}
+    pickers = {
+        find_files = {
+            hidden = true
+        }
+    }
 }
 
 local builtin = require("telescope.builtin")
@@ -117,6 +117,7 @@ require("mason-lspconfig").setup {
 -----------------------------------------------
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 local lspconfig = require("lspconfig")
+local navbuddy = require("nvim-navbuddy")
 
 lspconfig.lua_ls.setup {
     settings = {
@@ -129,13 +130,22 @@ lspconfig.lua_ls.setup {
     capabilities = capabilities
 }
 lspconfig.pyright.setup {
-    capabilities = capabilities
+    capabilities = capabilities,
+    on_attach = function(client, bufnr)
+        navbuddy.attach(client, bufnr)
+    end
 }
 lspconfig.tsserver.setup {
-    capabilities = capabilities
+    capabilities = capabilities,
+    on_attach = function(client, bufnr)
+        navbuddy.attach(client, bufnr)
+    end
 }
-lspconfig.gopls.setup{
-    capabilities = capabilities
+lspconfig.gopls.setup {
+    capabilities = capabilities,
+    on_attach = function(client, bufnr)
+        navbuddy.attach(client, bufnr)
+    end
 }
 
 -- Rename variables
@@ -145,20 +155,23 @@ keymap("n", "<leader>rn", vim.lsp.buf.rename, {noremap = true})
 keymap("n", "[d", vim.diagnostic.goto_prev)
 keymap("n", "]d", vim.diagnostic.goto_next)
 
--- Use LspAttach autocommand to only map the following keys 
+-- Use LspAttach autocommand to only map the following keys
 -- after the language server attaches to the current buffer
-vim.api.nvim_create_autocmd('LspAttach', {
-  group = vim.api.nvim_create_augroup('UserLspConfig', {}),
-  callback = function(ev)
-    -- Enable completion triggered by <c-x><c-o>
-    vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
+vim.api.nvim_create_autocmd(
+    "LspAttach",
+    {
+        group = vim.api.nvim_create_augroup("UserLspConfig", {}),
+        callback = function(ev)
+            -- Enable completion triggered by <c-x><c-o>
+            vim.bo[ev.buf].omnifunc = "v:lua.vim.lsp.omnifunc"
 
-    -- Buffer local mappings.
-    -- See `:help vim.lsp.*` for documentation on any of the below functions
-    local opt = { buffer = ev.buf }
-    vim.keymap.set('n', 'Gd', vim.lsp.buf.definition, opt)
-    end,
-})
+            -- Buffer local mappings.
+            -- See `:help vim.lsp.*` for documentation on any of the below functions
+            local opt = {buffer = ev.buf}
+            vim.keymap.set("n", "gd", vim.lsp.buf.definition, opt)
+        end
+    }
+)
 
 -- luasnip setup
 local luasnip = require "luasnip"
@@ -302,14 +315,19 @@ vim.api.nvim_set_keymap("n", "<leader>fm", ":Neoformat<cr>", {})
 -----------------------------------------------
 ------------------ MOTION ---------------------
 -----------------------------------------------
-local hop = require('hop')
+local hop = require("hop")
 hop.setup {}
-keymap('n', '<leader>hl', hop.hint_lines, {})
-keymap('n', '<leader>hp', hop.hint_patterns, {})
-keymap('n', '<leader>hw', hop.hint_words, {})
-keymap('n', '<leader>hv', hop.hint_vertical, {})
+keymap("n", "<leader>hl", hop.hint_lines, {})
+keymap("n", "<leader>hp", hop.hint_patterns, {})
+keymap("n", "<leader>hw", hop.hint_words, {})
+keymap("n", "<leader>hv", hop.hint_vertical, {})
 
 -----------------------------------------------
 ------------------- FOCUS ---------------------
 -----------------------------------------------
 require("focus").setup()
+
+-----------------------------------------------
+------------------- NAVBUDDY ------------------
+-----------------------------------------------
+
