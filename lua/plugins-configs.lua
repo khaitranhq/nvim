@@ -134,9 +134,9 @@ lspconfig.pyright.setup {
 lspconfig.tsserver.setup {
     capabilities = capabilities
 }
--- lspconfig.eslint.setup {
---     capabilities = capabilities
--- }
+lspconfig.gopls.setup{
+    capabilities = capabilities
+}
 
 -- Rename variables
 keymap("n", "<leader>rn", vim.lsp.buf.rename, {noremap = true})
