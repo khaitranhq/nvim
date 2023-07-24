@@ -6,7 +6,7 @@
 
 #### Packer
 
--   Window
+- Window
 
 ```
 git clone https://github.com/wbthomason/packer.nvim "$env:LOCALAPPDATA\nvim-data\site\pack\packer\start\packer.nvim"
@@ -31,8 +31,8 @@ pip install --upgrade yapf
 
 ### Install plugins
 
--   Open nvim
--   Run command `:PackerInstall`
+- Open nvim
+- Run command `:PackerInstall`
 
 ## Usage 🎆
 
@@ -90,9 +90,17 @@ Command `:SymbolsOutline` to toggle Symbols Outline. Use key `h` and `l` to fold
 
 ### Motion
 
-| Command    | Usage                           |
-|------------|---------------------------------|
+| Command     | Usage                           |
+| ----------- | ------------------------------- |
 | Leader + hw | Fastly move to words            |
 | Leader + hl | Fastly move to begin of lines   |
 | Leader + hp | Fastly move with search pattern |
 | Leader + hv | Fastly move in vertical column  |
+
+### Search and replace
+
+| Command/key | Usage                                |
+| ----------- | ------------------------------------ |
+| Leader + S  | Open search and replace buffer       |
+| Leader + sw | Search with the current selected tex |
+| Leader + sp | Search in the current file           |

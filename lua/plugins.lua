@@ -124,5 +124,12 @@ return require("packer").startup(
                 "nvim-tree/nvim-web-devicons"
             }
         }
+
+        use {
+            "nvim-pack/nvim-spectre",
+            requires = {
+                "nvim-lua/plenary.nvim"
+            }
+        }
     end
 )
