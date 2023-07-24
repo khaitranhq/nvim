@@ -375,3 +375,9 @@ vim.keymap.set(
     {noremap = true}
 )
 vim.keymap.set("n", "<leader>gpr", "<cmd>lua require('goto-preview').goto_preview_references()<CR>", {noremap = true})
+
+-----------------------------------------------
+--------------- TODO_COMMENTS -----------------
+-----------------------------------------------
+
+require("todo-comments").setup()

@@ -134,10 +134,14 @@ return require("packer").startup(
 
         use {
             "rmagatti/goto-preview",
-						opts = {}
-            -- config = function()
-            --     require("goto-preview").setup {}
-            -- end
+            opts = {}
+        }
+
+        use {
+            "folke/todo-comments.nvim",
+            requires = {
+                "nvim-lua/plenary.nvim"
+            }
         }
     end
 )
