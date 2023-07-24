@@ -131,5 +131,13 @@ return require("packer").startup(
                 "nvim-lua/plenary.nvim"
             }
         }
+
+        use {
+            "rmagatti/goto-preview",
+						opts = {}
+            -- config = function()
+            --     require("goto-preview").setup {}
+            -- end
+        }
     end
 )
