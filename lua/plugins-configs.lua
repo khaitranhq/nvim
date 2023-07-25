@@ -332,7 +332,7 @@ vim.keymap.set(
 )
 vim.keymap.set(
     "n",
-    "<leader>sp",
+    "<leader>scw",
     '<cmd>lua require("spectre").open_file_search({select_word=true})<CR>',
     {
         desc = "Search on current file"

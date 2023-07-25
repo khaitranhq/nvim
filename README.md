@@ -103,7 +103,7 @@ Command `:SymbolsOutline` to toggle Symbols Outline. Use key `h` and `l` to fold
 | ----------- | ------------------------------------ |
 | Leader + S  | Open search and replace buffer       |
 | Leader + sw | Search with the current selected tex |
-| Leader + sp | Search in the current file           |
+| Leader + scw | Search in the current file           |
 
 ### Preview definitions
 
