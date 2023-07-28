@@ -143,5 +143,13 @@ return require("packer").startup(
                 "nvim-lua/plenary.nvim"
             }
         }
+
+        use {
+            "olexsmir/gopher.nvim",
+            requires = {
+                "nvim-lua/plenary.nvim",
+                "nvim-treesitter/nvim-treesitter"
+            }
+        }
     end
 )
