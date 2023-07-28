@@ -89,8 +89,6 @@ return require("packer").startup(
         use {"akinsho/bufferline.nvim", tag = "*", requires = "nvim-tree/nvim-web-devicons"}
 
         -- Format code
-        use "sbdchd/neoformat"
-
         use {
             "phaazon/hop.nvim",
             branch = "v2", -- optional but strongly recommended
@@ -151,5 +149,7 @@ return require("packer").startup(
                 "nvim-treesitter/nvim-treesitter"
             }
         }
+
+        use {"mhartington/formatter.nvim"}
     end
 )

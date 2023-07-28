@@ -317,11 +317,6 @@ require("bufferline").setup {
 }
 
 -----------------------------------------------
----------------- NEOFORMAT --------------------
------------------------------------------------
-vim.api.nvim_set_keymap("n", "<leader>fm", ":Neoformat<cr>", {})
-
------------------------------------------------
 ------------------ MOTION ---------------------
 -----------------------------------------------
 local hop = require("hop")
@@ -394,11 +389,56 @@ require("todo-comments").setup()
 ------------------ GOPHER ---------------------
 -----------------------------------------------
 require("gopher").setup {
-  commands = {
-    go = "go",
-    gomodifytags = "/home/leo/go/bin/gomodifytags",
-    gotests = "/home/leo/go/bin/gotests", -- also you can set custom command path
-    impl = "/home/leo/go/bin/impl",
-    iferr = "/home/leo/go/bin/iferr",
-  },
+    commands = {
+        go = "go",
+        gomodifytags = "/home/leo/go/bin/gomodifytags",
+        gotests = "/home/leo/go/bin/gotests", -- also you can set custom command path
+        impl = "/home/leo/go/bin/impl",
+        iferr = "/home/leo/go/bin/iferr"
+    }
 }
+
+-----------------------------------------------
+------------------ FORMAT ---------------------
+-----------------------------------------------
+require("formatter").setup {
+    -- Enable or disable logging
+    logging = true,
+    -- Set the log level
+    log_level = vim.log.levels.WARN,
+    -- All formatter configurations are opt-in
+    filetype = {
+        -- Formatter configurations for filetype "lua" go here
+        -- and will be executed in order
+        lua = {
+            -- "formatter.filetypes.lua" defines default configurations for the
+            -- "lua" filetype
+            require("formatter.filetypes.lua").luafmt
+        },
+        go = {
+            require("formatter.filetypes.go").golines
+        },
+        html = {
+            require("formatter.filetypes.html").prettier
+        },
+        javascript = {
+            require("formatter.filetypes.javascript").prettier
+        },
+        json = {
+            require("formatter.filetypes.json").prettier
+        },
+        python = {
+            require("formatter.filetypes.python").yapf
+        },
+        sh = {
+            require("formatter.filetypes.sh").shfmt
+        },
+        typescript = {
+            require("formatter.filetypes.typescript").prettier
+        },
+        markdown = {
+            require("formatter.filetypes.markdown").prettier
+        }
+    }
+}
+vim.cmd [[autocmd BufWritePost * FormatWrite]]
