@@ -156,6 +156,12 @@ lspconfig.gopls.setup {
         }
     }
 }
+lspconfig.clangd.setup {
+    capabilities = capabilities,
+    on_attach = function(client, bufnr)
+        navbuddy.attach(client, bufnr)
+    end
+}
 
 -- Use LspAttach autocommand to only map the following keys
 -- after the language server attaches to the current buffer
@@ -438,6 +444,9 @@ require("formatter").setup {
         },
         markdown = {
             require("formatter.filetypes.markdown").prettier
+        },
+        cpp = {
+            require("formatter.filetypes.cpp").clangformat
         }
     }
 }
