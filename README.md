@@ -99,10 +99,10 @@ Command `:SymbolsOutline` to toggle Symbols Outline. Use key `h` and `l` to fold
 
 ### Search and replace
 
-| Command/key | Usage                                |
-| ----------- | ------------------------------------ |
-| Leader + S  | Open search and replace buffer       |
-| Leader + sw | Search with the current selected tex |
+| Command/key  | Usage                                |
+| ------------ | ------------------------------------ |
+| Leader + S   | Open search and replace buffer       |
+| Leader + sw  | Search with the current selected tex |
 | Leader + scw | Search in the current file           |
 
 ### Preview definitions
@@ -113,3 +113,14 @@ Command `:SymbolsOutline` to toggle Symbols Outline. Use key `h` and `l` to fold
 | Leader + gpt | Open preview type definition      |
 | Leader + gpi | Open preview implement definition |
 | Leader + gpr | Open preview references           |
+
+### Debugger
+
+| Command/key  | Usage                                    |
+| ------------ | ---------------------------------------- |
+| Leader + dbk | Toggle a breakpoint                      |
+| Leader + dbs | Start/Continue DAP                       |
+| Leader + dbr | Restart debugger                         |
+| Leader + dbt | Terminate debugger                       |
+| Leader + dbn | Next step                                |
+| Leader + dbb | Back step (some languages not supported) |

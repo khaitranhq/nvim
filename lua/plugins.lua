@@ -151,5 +151,9 @@ return require("packer").startup(
         }
 
         use {"mhartington/formatter.nvim"}
+
+        use "mfussenegger/nvim-dap"
+        use {"rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"}}
+        use "jay-babu/mason-nvim-dap.nvim"
     end
 )
