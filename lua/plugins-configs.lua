@@ -397,10 +397,10 @@ require("todo-comments").setup()
 require("gopher").setup {
     commands = {
         go = "go",
-        gomodifytags = "/home/leo/go/bin/gomodifytags",
-        gotests = "/home/leo/go/bin/gotests", -- also you can set custom command path
-        impl = "/home/leo/go/bin/impl",
-        iferr = "/home/leo/go/bin/iferr"
+        gomodifytags = "~/go/bin/gomodifytags",
+        gotests = "~/go/bin/gotests", -- also you can set custom command path
+        impl = "~/go/bin/impl",
+        iferr = "~/go/bin/iferr"
     }
 }
 
@@ -469,7 +469,7 @@ dap.adapters.codelldb = {
     port = port,
     executable = {
         -- CHANGE THIS to your path!
-        command = "/home/leo/.local/share/nvim/mason/bin/codelldb",
+        command = "~/.local/share/nvim/mason/bin/codelldb",
         args = {"--port", port}
 
         -- On windows you may have to uncomment this:
