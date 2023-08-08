@@ -11,7 +11,7 @@ M.general = {
         ["<C-j>"] = {"<C-w>j", "Window down"},
         ["<C-k>"] = {"<C-w>k", "Window up"},
         -- quit
-        ["qq"] = {":qa<CR>", "Quit Neovim"},
+        ["qq"] = {"<cmd>qa<CR>", "Quit Neovim"},
         -- short key to run commands
         [";"] = {":", "Short key to run commands"}
     },
@@ -20,6 +20,14 @@ M.general = {
         ["//"] = {'y/\\V<C-R>=escape(@",\'/\')<CR><CR>', "Search with selected text"}
     },
     x = {}
+}
+
+M.nvimtree = {
+	plugin = true,
+
+	n = {
+		["<C-b>"] = {"<cmd>NvimTreeToggle<CR>", "Toggle nvim tree"}
+	}
 }
 
 return M

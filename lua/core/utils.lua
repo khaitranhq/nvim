@@ -6,7 +6,7 @@ M.load_mappings = function(section, mapping_opt)
         function()
             local function set_section_map(section_values)
                 if section_values.plugin then
-                    return
+                    --return
                 end
 
                 section_values.plugin = nil
