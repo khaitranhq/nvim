@@ -159,6 +159,9 @@ local plugins = {
                 show_current_context_start = true
             }
         end
+    },
+    {
+        "tpope/vim-surround"
     }
 }
 
