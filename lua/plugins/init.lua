@@ -135,6 +135,12 @@ local plugins = {
         config = function()
             require("plugins.configs.lsp.tresitter")
         end
+    },
+    {
+        "folke/which-key.nvim",
+        config = function()
+            require("which-key").setup()
+        end
     }
 }
 
