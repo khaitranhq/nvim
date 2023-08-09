@@ -41,4 +41,16 @@ M.git = {
 	}
 }
 
+local telescope_builtin = require("telescope.builtin")
+M.telescope = {
+	plugin = true,
+
+	n = {
+		["<C-f>"] = {telescope_builtin.find_files, "Find files"},
+		["<C-g>"] = {telescope_builtin.live_grep, "Search text globally"},
+		["<leader>b"] = {telescope_builtin.buffers, "Search buffers"},
+		["<leader>gf"] = {telescope_builtin.current_buffer_fuzzy_find, "Search text in current buffer"}
+	}
+}
+
 return M
