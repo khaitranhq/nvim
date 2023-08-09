@@ -69,7 +69,61 @@ local plugins = {
 				ensure_installed = {"lua_ls", "tsserver", "pyright"}
 			}
 		end
-	}
+	},
+	{
+    "neovim/nvim-lspconfig",
+		config = function()
+			require("plugins.configs.lsp.nvim-lspconfig")
+		end
+	},
+	{
+			"hrsh7th/nvim-cmp",
+			event = "InsertEnter",
+			dependencies = {
+				{
+					-- snippet plugin
+					"L3MON4D3/LuaSnip",
+					dependencies = "rafamadriz/friendly-snippets",
+					opts = { history = true, updateevents = "TextChanged,TextChangedI" },
+      },
+
+      -- autopairing of (){}[] etc
+      {
+        "windwp/nvim-autopairs",
+        opts = {
+          fast_wrap = {},
+          disable_filetype = { "TelescopePrompt", "vim" },
+        },
+        config = function(_, opts)
+          require("nvim-autopairs").setup(opts)
+
+          -- setup cmp for autopairs
+          local cmp_autopairs = require "nvim-autopairs.completion.cmp"
+          require("cmp").event:on("confirm_done", cmp_autopairs.on_confirm_done())
+        end,
+      },
+
+      -- cmp sources plugins
+      {
+        "saadparwaiz1/cmp_luasnip",
+        "hrsh7th/cmp-nvim-lua",
+        "hrsh7th/cmp-nvim-lsp",
+        "hrsh7th/cmp-buffer",
+        "hrsh7th/cmp-path",
+      },
+     	{
+				"SmiteshP/nvim-navbuddy",
+				dependencies = {
+						"SmiteshP/nvim-navic",
+						"MunifTanjim/nui.nvim"
+				},
+				opts = { lsp = { auto_attach = true } }
+			}
+    },
+    config = function(_, opts)
+      require("plugins.configs.lsp.cmp")
+    end,
+  },
 }
 
 require("lazy").setup(plugins)
