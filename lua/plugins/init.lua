@@ -181,6 +181,12 @@ local plugins = {
         "folke/trouble.nvim",
         dependencies = {"nvim-tree/nvim-web-devicons"},
         opts = {}
+    },
+    {
+        "nvim-pack/nvim-spectre",
+        dependencies = {
+            "nvim-lua/plenary.nvim"
+        }
     }
 }
 

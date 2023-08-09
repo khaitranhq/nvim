@@ -67,4 +67,24 @@ M.hop = {
     }
 }
 
+local spectre = require("spectre")
+M.spectre = {
+    plugin = true,
+    n = {
+        ["<leader>S"] = {spectre.toggle, "Toggle Spectre"},
+        ["<leader>sw"] = {
+            function()
+                spectre.open_visual({select_word = true})
+            end,
+            "Search with word in cursor position"
+        }
+    },
+    v = {
+        ["<leader>sw"] = {
+            spectre.open_visual,
+            "Search with current selected word"
+        }
+    }
+}
+
 return M
