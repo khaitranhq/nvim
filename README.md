@@ -1,38 +1,18 @@
 # Neovim Configuration 🔧
 
-## Setup 📥
+## Prerequesites
 
-### Install dependencies
+- Node.js
+- Python
+- LLVM
+- Neovim > 0.8.0. Check [documentation](https://github.com/neovim/neovim/wiki/Building-Neovim) to install additional dependencies
 
-#### Packer
-
-- Window
-
-```
-git clone https://github.com/wbthomason/packer.nvim "$env:LOCALAPPDATA\nvim-data\site\pack\packer\start\packer.nvim"
-```
-
-#### Node.js
-
-Download installer [here](https://nodejs.org/en/download). It will also install _Python_
-
-#### C compiler
-
-Install MingW by Chocolate with Admin Powershell
-`choco install llvm`
-
-### Install formatters
+## Install aditional formatter
 
 ```
-npm install -g prettier lua-fmt
+npm install -g prettier lua-fmt neovim
 pip install --upgrade yapf
-
 ```
-
-### Install plugins
-
-- Open nvim
-- Run command `:PackerInstall`
 
 ## Usage 🎆
 
