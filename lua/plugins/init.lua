@@ -141,6 +141,14 @@ local plugins = {
         config = function()
             require("which-key").setup()
         end
+    },
+    {
+        "numToStr/Comment.nvim",
+        opts = {},
+        config = function()
+            require("Comment").setup()
+        end,
+        lazy = false
     }
 }
 
