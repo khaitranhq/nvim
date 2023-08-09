@@ -129,6 +129,12 @@ local plugins = {
         config = function()
             require("plugins.configs.lsp.formatter")
         end
+    },
+    {
+        "nvim-treesitter/nvim-treesitter",
+        config = function()
+            require("plugins.configs.lsp.tresitter")
+        end
     }
 }
 

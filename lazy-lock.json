@@ -19,6 +19,7 @@
   "nvim-navbuddy": { "branch": "master", "commit": "15184582a786d6b32b2724a4799891d0d69f0cdd" },
   "nvim-navic": { "branch": "master", "commit": "9c89730da6a05acfeb6a197e212dfadf5aa60ca0" },
   "nvim-tree.lua": { "branch": "master", "commit": "904f95cd9db31d1800998fa428e78e418a50181d" },
+  "nvim-treesitter": { "branch": "master", "commit": "80cee52d445363c8bd08eacca17be31e3837f4d0" },
   "nvim-web-devicons": { "branch": "master", "commit": "eb8f80f30fd5e9a6176dee5c46661ebd7437ac46" },
   "plenary.nvim": { "branch": "master", "commit": "267282a9ce242bbb0c5dc31445b6d353bed978bb" },
   "telescope.nvim": { "branch": "master", "commit": "776b509f80dd49d8205b9b0d94485568236d1192" },
