@@ -87,4 +87,21 @@ M.spectre = {
     }
 }
 
+local goto_preview = require("goto-preview")
+M.goto_preview = {
+    plugin = true,
+    n = {
+        ["<leader>gpd"] = {goto_preview.goto_preview_definition, "Show preview definition in float window"},
+        ["<leader>gpt"] = {goto_preview.goto_preview_type_definition, "Show preview type definition in float window"},
+        ["<leader>gpi"] = {
+            goto_preview.goto_preview_implementation,
+            "Show preview implementation definition in float window"
+        },
+        ["<leader>gpr"] = {
+            goto_preview.goto_preview_references,
+            "Show preview references definition in float window"
+        }
+    }
+}
+
 return M

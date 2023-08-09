@@ -187,6 +187,12 @@ local plugins = {
         dependencies = {
             "nvim-lua/plenary.nvim"
         }
+    },
+    {
+        "rmagatti/goto-preview",
+        config = function()
+            require("goto-preview").setup {}
+        end
     }
 }
 
