@@ -41,12 +41,29 @@ local plugins = {
 		end
 	},
 	{
+		'akinsho/bufferline.nvim', version = "*", dependencies = 'nvim-tree/nvim-web-devicons'
+	},
+	{
 		"tpope/vim-fugitive"
 	},
 	{
 		'nvim-telescope/telescope.nvim',
 		tag = '0.1.2',
 		dependencies = { 'nvim-lua/plenary.nvim' }
+	},
+	{
+		'williamboman/mason.nvim',
+		config = function()
+			require("plugins.configs.lsp.mason")
+		end
+	},
+	{
+		"williamboman/mason-lspconfig.nvim",
+		config = function()
+			require("mason-lspconfig").setup {
+				ensure_installed = {"lua_ls", "tsserver", "pyright"}
+			}
+		end
 	}
 }
 
