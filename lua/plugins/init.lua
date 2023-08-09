@@ -41,7 +41,12 @@ local plugins = {
 		end
 	},
 	{
-		'akinsho/bufferline.nvim', version = "*", dependencies = 'nvim-tree/nvim-web-devicons'
+		'akinsho/bufferline.nvim', 
+		version = "*", 
+		dependencies = 'nvim-tree/nvim-web-devicons',
+		config = function ()
+			require("plugins.configs.editor.bufferline")
+		end
 	},
 	{
 		"tpope/vim-fugitive"
