@@ -18,3 +18,6 @@ opt.termguicolors = true
 -- set foldmethod
 opt.foldmethod = "indent"
 opt.foldlevel = 20
+
+-------------------------global-------------------------
+vim.g.mapleader = " "
