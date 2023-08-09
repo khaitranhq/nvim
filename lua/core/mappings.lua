@@ -58,4 +58,13 @@ M.lsp = {
     }
 }
 
+local hop = require("hop")
+M.hop = {
+    plugin = true,
+    n = {
+        ["<leader>hp"] = {hop.hint_patterns, "Move cursor from searching pattern result"},
+        ["<leader>hw"] = {hop.hint_words, "Move cursor to specific words"}
+    }
+}
+
 return M
