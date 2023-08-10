@@ -77,6 +77,12 @@ M.spectre = {
                 spectre.open_visual({select_word = true})
             end,
             "Search with word in cursor position"
+        },
+        ["<leader>sc"] = {
+            function()
+                spectre.open_file_search({select_word = true})
+            end,
+            "Search on current file"
         }
     },
     v = {
