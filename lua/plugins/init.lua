@@ -7,7 +7,16 @@ local plugins = {
             "nvim-tree/nvim-web-devicons"
         },
         config = function()
-            require("nvim-tree").setup({view = {relativenumber = true}})
+            require("nvim-tree").setup(
+                {
+                    view = {relativenumber = true},
+                    git = {
+                        enable = true,
+                        ignore = false,
+                        timeout = 500
+                    }
+                }
+            )
         end
     },
     {
