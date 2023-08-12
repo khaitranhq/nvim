@@ -110,4 +110,12 @@ M.goto_preview = {
     }
 }
 
+local notify = require("notify")
+M.notify = {
+	plugin = true,
+	n = {
+		["<leader>nh"] = {notify.dismiss, "Dismiss all notifications"}
+	}
+}
+
 return M
