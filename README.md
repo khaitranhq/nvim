@@ -14,6 +14,14 @@ npm install -g prettier lua-fmt neovim
 pip install --upgrade yapf
 ```
 
+## Environment for C++ development
+
+Add this to `~/.zshrc` or `~/.profile`
+
+```
+export CPLUS_INCLUDE_PATH=/usr/include/c++/11:/usr/include/x86_64-linux-gnu/c++/11
+```
+
 ## Usage 🎆
 
 ### Miscellaneous
