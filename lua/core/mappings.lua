@@ -112,10 +112,23 @@ M.goto_preview = {
 
 local notify = require("notify")
 M.notify = {
-	plugin = true,
-	n = {
-		["<leader>nh"] = {notify.dismiss, "Dismiss all notifications"}
-	}
+    plugin = true,
+    n = {
+        ["<leader>nh"] = {notify.dismiss, "Dismiss all notifications"}
+    }
+}
+
+local dap = require("dap")
+M.dap = {
+    plugin = true,
+    n = {
+        ["<leader>dbn"] = {dap.step_over, "Debug: next step"},
+        ["<leader>dbb"] = {dap.step_back, "Debug: previous step"},
+        ["<leader>dbk"] = {dap.toggle_breakpoint, "Debug: toggle a breakpoint"},
+        ["<leader>dbt"] = {dap.terminate, "Debug: Terminate"},
+        ["<leader>dbr"] = {dap.restart, "Debug: restart"},
+        ["<leader>dbs"] = {dap.continue, "Debug: continue"}
+    }
 }
 
 return M

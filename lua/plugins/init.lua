@@ -224,6 +224,15 @@ local plugins = {
         config = function()
             vim.fn["mkdp#util#install"]()
         end
+    },
+    {
+        "rcarriga/nvim-dap-ui",
+        dependencies = {
+            "mfussenegger/nvim-dap"
+        },
+        config = function()
+            require("plugins.configs.lsp.nvim-dap")
+        end
     }
 }
 
