@@ -54,7 +54,7 @@ M.lsp = {
         ["[d"] = {vim.diagnostic.goto_prev, "Previous diagnostic position"},
         ["]d"] = {vim.diagnostic.goto_next, "Next diagnostic position"},
         ["<leader>e"] = {vim.diagnostic.open_float, "Show diagnostic message in a float window"},
-        ["<leader>d"] = {vim.lsp.buf.hover, "Show definition"}
+        ["<leader>de"] = {vim.lsp.buf.hover, "Show definition"}
     }
 }
 
