@@ -7,16 +7,7 @@ local plugins = {
             "nvim-tree/nvim-web-devicons"
         },
         config = function()
-            require("nvim-tree").setup(
-                {
-                    view = {relativenumber = true},
-                    git = {
-                        enable = true,
-                        ignore = false,
-                        timeout = 500
-                    }
-                }
-            )
+            require("plugins.configs.editor.nvim-tree")
         end
     },
     {
@@ -233,7 +224,15 @@ local plugins = {
         config = function()
             require("plugins.configs.lsp.nvim-dap")
         end
+    },
+    {
+        "folke/todo-comments.nvim",
+        dependencies = {"nvim-lua/plenary.nvim"},
+        config = function()
+            require("todo-comments").setup()
+        end
     }
 }
+-- HACK
 
 require("lazy").setup(plugins)

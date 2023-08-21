@@ -22,7 +22,7 @@ M.general = {
 M.nvimtree = {
     plugin = true,
     n = {
-        ["<C-b>"] = {"<cmd>NvimTreeToggle<CR>", "Toggle nvim tree"}
+        ["<leader>b"] = {"<cmd>NvimTreeToggle<CR>", "Toggle nvim tree"}
     }
 }
 
@@ -42,8 +42,8 @@ M.telescope = {
     n = {
         ["<C-f>"] = {telescope_builtin.find_files, "Find files"},
         ["<C-g>"] = {telescope_builtin.live_grep, "Search text globally"},
-        ["<leader>b"] = {telescope_builtin.buffers, "Search buffers"},
-        ["<leader>gf"] = {telescope_builtin.current_buffer_fuzzy_find, "Search text in current buffer"}
+        ["<leader>fb"] = {telescope_builtin.buffers, "Search buffers"},
+        ["<leader>fg"] = {telescope_builtin.current_buffer_fuzzy_find, "Search text in current buffer"}
     }
 }
 
