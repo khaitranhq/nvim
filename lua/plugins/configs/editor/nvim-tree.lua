@@ -7,13 +7,6 @@ vim.cmd([[
   nnoremap - :NvimTreeToggle<CR>
 ]])
 
--- local keymap = vim.keymap -- for conciseness
--- keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>") -- toggle file explorer
-
--- vim.opt.foldmethod = "expr"
--- vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
--- vim.opt.foldenable = false --                  " Disable folding at startup.
-
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
@@ -54,6 +47,9 @@ nvimtree.setup(
             width = function()
                 return math.floor(vim.opt.columns:get() * WIDTH_RATIO)
             end
+        },
+        git = {
+            enable = false
         }
         -- filters = {
         --   custom = { "^.git$" },
