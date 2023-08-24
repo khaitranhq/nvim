@@ -11,19 +11,8 @@ require("telescope").setup {
     },
     pickers = {
         find_files = {
-            -- find_command = {
-            --     "fd",
-            --     "--type",
-            --     "file",
-            --     "-I",
-            --     "--type",
-            --     "symlink",
-            --     "--hidden",
-            --     "--exclude",
-            --     ".git/*"
-            --     -- put your other patterns here
-            -- },
-            hidden = true
+            hidden = true,
+            no_ignore = true
         }
     }
 }
