@@ -22,7 +22,7 @@ M.general = {
 M.nvimtree = {
     plugin = true,
     n = {
-        ["<leader>b"] = {"<cmd>NvimTreeToggle<CR>", "Toggle nvim tree"}
+        ["<C-b>"] = {"<cmd>NvimTreeToggle<CR>", "Toggle nvim tree"}
     }
 }
 
