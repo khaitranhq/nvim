@@ -37,7 +37,7 @@ local plugins = {
         config = function()
             require("lualine").setup {
                 options = {
-                    theme = "tokyonight"
+                    theme = "nightfly"
                 },
                 sections = {
                     lualine_b = {"diagnostics"}

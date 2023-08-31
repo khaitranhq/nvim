@@ -19,9 +19,6 @@ opt.termguicolors = true
 opt.foldmethod = "indent"
 opt.foldlevel = 20
 
--- set border line for horizontal splitting
-opt.laststatus = 3
-
 -------------------------global-------------------------
 vim.g.mapleader = " "
 vim.g.loaded_netrw = 1
