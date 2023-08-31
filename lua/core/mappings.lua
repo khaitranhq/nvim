@@ -131,4 +131,11 @@ M.dap = {
     }
 }
 
+M.term = {
+    plugin = true,
+    n = {
+        ["<leader>lg"] = {_lazygit_toggle, "Open lazygit"}
+    }
+}
+
 return M
