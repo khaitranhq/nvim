@@ -268,6 +268,21 @@ local plugins = {
                 }
             )
         end
+    },
+    {
+        "chrisgrieser/nvim-early-retirement",
+        config = true,
+        opts = {
+            retirementAgeMins = 1
+        },
+        event = "VeryLazy"
+    },
+    {
+        "folke/twilight.nvim",
+        config = function()
+            require("twilight").setup()
+            require("twilight").enable()
+        end
     }
 }
 
