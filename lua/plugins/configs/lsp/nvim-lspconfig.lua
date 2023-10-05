@@ -45,6 +45,9 @@ lspconfig.clangd.setup {
         navbuddy.attach(client, bufnr)
     end
 }
+lspconfig.bashls.setup {
+    capabilities = capabilities
+}
 
 -- Use LspAttach autocommand to only map the following keys
 -- after the language server attaches to the current buffer
