@@ -110,14 +110,6 @@ M.goto_preview = {
     }
 }
 
-local notify = require("notify")
-M.notify = {
-    plugin = true,
-    n = {
-        ["<leader>nh"] = {notify.dismiss, "Dismiss all notifications"}
-    }
-}
-
 local dap = require("dap")
 M.dap = {
     plugin = true,
@@ -135,6 +127,13 @@ M.term = {
     plugin = true,
     n = {
         ["<leader>lg"] = {_lazygit_toggle, "Open lazygit"}
+    }
+}
+
+M.calltree = {
+    plugin = true,
+    n = {
+        ["<leader>ct"] = {vim.lsp.buf.incoming_calls, "Open Call Tree"}
     }
 }
 
