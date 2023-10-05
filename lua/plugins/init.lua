@@ -67,7 +67,9 @@ local plugins = {
     {
         "williamboman/mason.nvim",
         config = function()
-            require("mason").setup()
+            require("mason").setup {
+                ensure_installed = {"lua_ls", "tsserver", "pyright"}
+            }
         end
     },
     {
@@ -156,19 +158,14 @@ local plugins = {
         end,
         lazy = false
     },
-    {
-        "lukas-reineke/indent-blankline.nvim",
-        config = function()
-            require("indent_blankline").setup {
-                -- for example, context is off by default, use this to turn it on
-                show_current_context = true,
-                show_current_context_start = true
-            }
-        end
-    },
+    -- Blank line for Indent
+
+    {"lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {}},
+    -- Surround actions
     {
         "tpope/vim-surround"
     },
+    -- Fast motions
     {
         "phaazon/hop.nvim",
         branch = "v2", -- optional but strongly recommended
@@ -176,6 +173,7 @@ local plugins = {
             require("hop").setup()
         end
     },
+    -- Focus on the buffer that you're working
     {
         "nvim-focus/focus.nvim",
         version = "*",
@@ -183,23 +181,27 @@ local plugins = {
             require("focus").setup()
         end
     },
+    -- Show all troubles of the project
     {
         "folke/trouble.nvim",
         dependencies = {"nvim-tree/nvim-web-devicons"},
         opts = {}
     },
+    -- Search in entire project
     {
         "nvim-pack/nvim-spectre",
         dependencies = {
             "nvim-lua/plenary.nvim"
         }
     },
+    -- Preview definition using LSP
     {
         "rmagatti/goto-preview",
         config = function()
             require("goto-preview").setup {}
         end
     },
+    -- Replace message, cmdliine, popupmenu
     {
         "folke/noice.nvim",
         event = "VeryLazy",
@@ -213,12 +215,14 @@ local plugins = {
             "rcarriga/nvim-notify"
         }
     },
+    -- Preview markdown
     {
         "iamcco/markdown-preview.nvim",
         config = function()
             vim.fn["mkdp#util#install"]()
         end
     },
+    -- Debug
     {
         "rcarriga/nvim-dap-ui",
         dependencies = {
@@ -235,6 +239,7 @@ local plugins = {
             require("todo-comments").setup()
         end
     },
+    -- Toggle terminal
     {
         "akinsho/toggleterm.nvim",
         version = "*",
@@ -242,6 +247,7 @@ local plugins = {
             require("plugins.configs.editor.term")
         end
     },
+    -- Show underline same words
     {
         "yamatsum/nvim-cursorline",
         config = function()
@@ -259,6 +265,7 @@ local plugins = {
             }
         end
     },
+    -- Annotate at the end of a closing tag/bracket/parenthesis/etc
     {
         "code-biscuits/nvim-biscuits",
         config = function()
@@ -269,6 +276,7 @@ local plugins = {
             )
         end
     },
+    -- Close buffers after 1 minute of inactivity
     {
         "chrisgrieser/nvim-early-retirement",
         config = true,
@@ -277,11 +285,33 @@ local plugins = {
         },
         event = "VeryLazy"
     },
+    -- Go utils
     {
-        "folke/twilight.nvim",
+        "ray-x/go.nvim",
+        dependencies = {
+            -- optional packages
+            "ray-x/guihua.lua",
+            "neovim/nvim-lspconfig",
+            "nvim-treesitter/nvim-treesitter"
+        },
         config = function()
-            require("twilight").setup()
-            -- require("twilight").enable()
+            require("go").setup()
+        end,
+        event = {"CmdlineEnter"},
+        ft = {"go", "gomod"},
+        build = ':lua require("go.install").update_all_sync()' -- if you need to install/update all binaries
+    },
+    -- Show Call Hierachy
+    {
+        "ldelossa/litee-calltree.nvim",
+        dependencies = {
+            "ldelossa/litee.nvim"
+        },
+        config = function()
+            -- configure the litee.nvim library
+            require("litee.lib").setup({})
+            -- configure litee-calltree.nvim
+            require("litee.calltree").setup({})
         end
     }
 }
