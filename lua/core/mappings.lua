@@ -130,10 +130,11 @@ M.term = {
     }
 }
 
-M.calltree = {
+local notify = require("notify")
+M.notify = {
     plugin = true,
     n = {
-        ["<leader>ct"] = {vim.lsp.buf.incoming_calls, "Open Call Tree"}
+        ["<leader>nh"] = {notify.dismiss, "Dismiss all notifications"}
     }
 }
 

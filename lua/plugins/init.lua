@@ -287,18 +287,19 @@ local plugins = {
         ft = {"go", "gomod"},
         build = ':lua require("go.install").update_all_sync()' -- if you need to install/update all binaries
     },
-    -- Show Call Hierachy
+    -- Replace message, cmdliine, popupmenu
     {
-        "ldelossa/litee-calltree.nvim",
+        "folke/noice.nvim",
+        event = "VeryLazy",
+        opts = {},
         dependencies = {
-            "ldelossa/litee.nvim"
-        },
-        config = function()
-            -- configure the litee.nvim library
-            require("litee.lib").setup({})
-            -- configure litee-calltree.nvim
-            require("litee.calltree").setup({})
-        end
+            -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+            "MunifTanjim/nui.nvim",
+            -- OPTIONAL:
+            --   `nvim-notify` is only needed, if you want to use the notification view.
+            --   If not available, we use `mini` as the fallback
+            "rcarriga/nvim-notify"
+        }
     }
 }
 
