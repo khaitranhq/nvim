@@ -53,9 +53,9 @@ local plugins = {
             require("plugins.configs.editor.bufferline")
         end
     },
-    {
-        "tpope/vim-fugitive"
-    },
+    -- {
+    --     "tpope/vim-fugitive"
+    -- },
     {
         "nvim-telescope/telescope.nvim",
         tag = "0.1.2",
@@ -72,14 +72,14 @@ local plugins = {
             }
         end
     },
-    {
-        "williamboman/mason-lspconfig.nvim",
-        config = function()
-            require("mason-lspconfig").setup {
-                ensure_installed = {"lua_ls", "tsserver", "pyright"}
-            }
-        end
-    },
+    -- {
+    --     "williamboman/mason-lspconfig.nvim",
+    --     config = function()
+    --         require("mason-lspconfig").setup {
+    --             ensure_installed = {"lua_ls", "tsserver", "pyright"}
+    --         }
+    --     end
+    -- },
     {
         "neovim/nvim-lspconfig",
         config = function()
@@ -144,12 +144,12 @@ local plugins = {
             require("plugins.configs.lsp.tresitter")
         end
     },
-    {
-        "folke/which-key.nvim",
-        config = function()
-            require("which-key").setup()
-        end
-    },
+    -- {
+    --     "folke/which-key.nvim",
+    --     config = function()
+    --         require("which-key").setup()
+    --     end
+    -- },
     {
         "numToStr/Comment.nvim",
         opts = {},
@@ -163,7 +163,12 @@ local plugins = {
     {"lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {}},
     -- Surround actions
     {
-        "tpope/vim-surround"
+        "kylechui/nvim-surround",
+        version = "*", -- Use for stability; omit to use `main` branch for the latest features
+        event = "VeryLazy",
+        config = function()
+            require("nvim-surround").setup({})
+        end
     },
     -- Fast motions
     {
@@ -208,16 +213,16 @@ local plugins = {
             vim.fn["mkdp#util#install"]()
         end
     },
-    -- Debug
-    {
-        "rcarriga/nvim-dap-ui",
-        dependencies = {
-            "mfussenegger/nvim-dap"
-        },
-        config = function()
-            require("plugins.configs.lsp.nvim-dap")
-        end
-    },
+    -- -- Debug
+    -- {
+    --     "rcarriga/nvim-dap-ui",
+    --     dependencies = {
+    --         "mfussenegger/nvim-dap"
+    --     },
+    --     config = function()
+    --         require("plugins.configs.lsp.nvim-dap")
+    --     end
+    -- },
     {
         "folke/todo-comments.nvim",
         dependencies = {"nvim-lua/plenary.nvim"},
