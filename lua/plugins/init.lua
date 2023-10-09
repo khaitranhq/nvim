@@ -118,14 +118,6 @@ local plugins = {
                 "hrsh7th/cmp-nvim-lsp",
                 "hrsh7th/cmp-buffer",
                 "hrsh7th/cmp-path"
-            },
-            {
-                "SmiteshP/nvim-navbuddy",
-                dependencies = {
-                    "SmiteshP/nvim-navic",
-                    "MunifTanjim/nui.nvim"
-                },
-                opts = {lsp = {auto_attach = true}}
             }
         },
         config = function(_, _)
@@ -276,22 +268,22 @@ local plugins = {
         },
         event = "VeryLazy"
     },
-    -- Go utils
-    {
-        "ray-x/go.nvim",
-        dependencies = {
-            -- optional packages
-            "ray-x/guihua.lua",
-            "neovim/nvim-lspconfig",
-            "nvim-treesitter/nvim-treesitter"
-        },
-        config = function()
-            require("go").setup()
-        end,
-        event = {"CmdlineEnter"},
-        ft = {"go", "gomod"},
-        build = ':lua require("go.install").update_all_sync()' -- if you need to install/update all binaries
-    },
+    -- -- Go utils
+    -- {
+    --     "ray-x/go.nvim",
+    --     dependencies = {
+    --         -- optional packages
+    --         "ray-x/guihua.lua",
+    --         "neovim/nvim-lspconfig",
+    --         "nvim-treesitter/nvim-treesitter"
+    --     },
+    --     config = function()
+    --         require("go").setup()
+    --     end,
+    --     event = {"CmdlineEnter"},
+    --     ft = {"go", "gomod"},
+    --     build = ':lua require("go.install").update_all_sync()' -- if you need to install/update all binaries
+    -- },
     -- Replace message, cmdliine, popupmenu
     {
         "folke/noice.nvim",

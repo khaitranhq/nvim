@@ -1,6 +1,5 @@
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 local lspconfig = require("lspconfig")
-local navbuddy = require("nvim-navbuddy")
 local util = require "lspconfig/util"
 
 lspconfig.lua_ls.setup {
@@ -14,22 +13,13 @@ lspconfig.lua_ls.setup {
     capabilities = capabilities
 }
 lspconfig.pyright.setup {
-    capabilities = capabilities,
-    on_attach = function(client, bufnr)
-        navbuddy.attach(client, bufnr)
-    end
+    capabilities = capabilities
 }
 lspconfig.tsserver.setup {
-    capabilities = capabilities,
-    on_attach = function(client, bufnr)
-        navbuddy.attach(client, bufnr)
-    end
+    capabilities = capabilities
 }
 lspconfig.gopls.setup {
     capabilities = capabilities,
-    on_attach = function(client, bufnr)
-        navbuddy.attach(client, bufnr)
-    end,
     cmd = {"gopls"},
     filetypes = {"go", "gomod", "gowork", "gotmpl"},
     root_dir = util.root_pattern("go.work", "go.mod", ".git"),
@@ -40,10 +30,7 @@ lspconfig.gopls.setup {
     }
 }
 lspconfig.clangd.setup {
-    capabilities = capabilities,
-    on_attach = function(client, bufnr)
-        navbuddy.attach(client, bufnr)
-    end
+    capabilities = capabilities
 }
 lspconfig.bashls.setup {
     capabilities = capabilities
