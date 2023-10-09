@@ -12,7 +12,8 @@ M.general = {
         -- quit
         ["qq"] = {"<cmd>qa<CR>", "Quit Neovim"},
         -- short key to run commands
-        [";"] = {":", "Short key to run commands"}
+        [";"] = {":", "Short key to run commands"},
+        ["<leader>bd"] = {vim.cmd.BufDir, "Show directory of current buffer"}
     },
     v = {
         ["//"] = {'y/\\V<C-R>=escape(@",\'/\')<CR><CR>', "Search with selected text"}
