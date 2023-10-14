@@ -11,23 +11,36 @@ local plugins = {
         end
     },
     {
-        "folke/tokyonight.nvim",
-        lazy = false,
+        "catppuccin/nvim",
+        name = "catppuccin",
         priority = 1000,
-        opts = {},
         config = function()
-            require("tokyonight").setup(
+            require("catppuccin").setup(
                 {
-                    style = "night",
-                    on_colors = function(colors)
-                        colors.border = "#565f89"
-                    end
+                    flavour = "macchiato" -- latte, frappe, macchiato, mocha
                 }
             )
-
-            vim.cmd [[colorscheme tokyonight]]
+            vim.cmd.colorscheme "catppuccin"
         end
     },
+    -- {
+    --     "folke/tokyonight.nvim",
+    --     lazy = false,
+    --     priority = 1000,
+    --     opts = {},
+    --     config = function()
+    --         require("tokyonight").setup(
+    --             {
+    --                 style = "night",
+    --                 on_colors = function(colors)
+    --                     colors.border = "#565f89"
+    --                 end
+    --             }
+    --         )
+    --
+    --         vim.cmd [[colorscheme tokyonight]]
+    --     end
+    -- },
     {
         "nvim-lualine/lualine.nvim",
         lazy = false,
@@ -37,7 +50,7 @@ local plugins = {
         config = function()
             require("lualine").setup {
                 options = {
-                    theme = "nightfly"
+                    theme = "catppuccin"
                 },
                 sections = {
                     lualine_b = {"diagnostics"}
@@ -49,6 +62,7 @@ local plugins = {
         "akinsho/bufferline.nvim",
         version = "*",
         dependencies = "nvim-tree/nvim-web-devicons",
+        after = "catppuccin",
         config = function()
             require("plugins.configs.editor.bufferline")
         end
