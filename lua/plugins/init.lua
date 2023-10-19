@@ -15,11 +15,7 @@ local plugins = {
         name = "catppuccin",
         priority = 1000,
         config = function()
-            require("catppuccin").setup(
-                {
-                    flavour = "macchiato" -- latte, frappe, macchiato, mocha
-                }
-            )
+            require("catppuccin").setup({})
             vim.cmd.colorscheme "catppuccin"
         end
     },
@@ -302,7 +298,13 @@ local plugins = {
     {
         "folke/noice.nvim",
         event = "VeryLazy",
-        opts = {},
+        opts = {
+            lsp = {
+                signature = {
+                    enabled = false
+                }
+            }
+        },
         dependencies = {
             -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
             "MunifTanjim/nui.nvim",
@@ -311,6 +313,15 @@ local plugins = {
             --   If not available, we use `mini` as the fallback
             "rcarriga/nvim-notify"
         }
+    },
+    -- Show function signature when you type
+    {
+        "ray-x/lsp_signature.nvim",
+        event = "VeryLazy",
+        opts = {},
+        config = function(_, opts)
+            require "lsp_signature".setup(opts)
+        end
     }
 }
 
