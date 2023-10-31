@@ -215,16 +215,16 @@ local plugins = {
             vim.fn["mkdp#util#install"]()
         end
     },
-    -- -- Debug
-    -- {
-    --     "rcarriga/nvim-dap-ui",
-    --     dependencies = {
-    --         "mfussenegger/nvim-dap"
-    --     },
-    --     config = function()
-    --         require("plugins.configs.lsp.nvim-dap")
-    --     end
-    -- },
+    -- Debug
+    {
+        "rcarriga/nvim-dap-ui",
+        dependencies = {
+            "mfussenegger/nvim-dap"
+        },
+        config = function()
+            require("plugins.configs.lsp.nvim-dap")
+        end
+    },
     {
         "folke/todo-comments.nvim",
         dependencies = {"nvim-lua/plenary.nvim"},

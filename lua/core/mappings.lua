@@ -111,18 +111,18 @@ M.goto_preview = {
     }
 }
 
--- local dap = require("dap")
--- M.dap = {
---     plugin = true,
---     n = {
---         ["<leader>dbn"] = {dap.step_over, "Debug: next step"},
---         ["<leader>dbb"] = {dap.step_back, "Debug: previous step"},
---         ["<leader>dbk"] = {dap.toggle_breakpoint, "Debug: toggle a breakpoint"},
---         ["<leader>dbt"] = {dap.terminate, "Debug: Terminate"},
---         ["<leader>dbr"] = {dap.restart, "Debug: restart"},
---         ["<leader>dbs"] = {dap.continue, "Debug: continue"}
---     }
--- }
+local dap = require("dap")
+M.dap = {
+    plugin = true,
+    n = {
+        ["<leader>dbn"] = {dap.step_over, "Debug: next step"},
+        ["<leader>dbb"] = {dap.step_back, "Debug: previous step"},
+        ["<leader>dbk"] = {dap.toggle_breakpoint, "Debug: toggle a breakpoint"},
+        ["<leader>dbt"] = {dap.terminate, "Debug: Terminate"},
+        ["<leader>dbr"] = {dap.restart, "Debug: restart"},
+        ["<leader>dbs"] = {dap.continue, "Debug: continue"}
+    }
+}
 
 M.term = {
     plugin = true,
