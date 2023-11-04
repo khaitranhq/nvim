@@ -33,6 +33,9 @@ require("formatter").setup {
         typescript = {
             require("formatter.filetypes.typescript").prettier
         },
+        typescriptreact = {
+            require("formatter.filetypes.typescriptreact").prettier
+        },
         markdown = {
             require("formatter.filetypes.markdown").prettier
         },
