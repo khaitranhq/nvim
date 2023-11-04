@@ -142,6 +142,9 @@ local plugins = {
     },
     {
         "nvim-treesitter/nvim-treesitter",
+        dependencies = {
+            "windwp/nvim-ts-autotag"
+        },
         config = function()
             require("plugins.configs.lsp.tresitter")
         end
