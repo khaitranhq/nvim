@@ -27,16 +27,6 @@ M.nvimtree = {
     }
 }
 
-M.git = {
-    plugin = true,
-    n = {
-        ["<leader>gs"] = {":G<CR>", "Toggle git status"},
-        ["<leader>gd"] = {"<cmd>Gdiffsplit<CR>", "Split buffer and show Git differences"},
-        ["<leader>gc"] = {"<cmd>Git commit<CR>", "Commit git"},
-        ["<leader>gb"] = {"<cmd>Gblame<CR>", "Show Git blame"}
-    }
-}
-
 local telescope_builtin = require("telescope.builtin")
 M.telescope = {
     plugin = true,
