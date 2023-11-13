@@ -19,24 +19,6 @@ local plugins = {
             vim.cmd.colorscheme "catppuccin"
         end
     },
-    -- {
-    --     "folke/tokyonight.nvim",
-    --     lazy = false,
-    --     priority = 1000,
-    --     opts = {},
-    --     config = function()
-    --         require("tokyonight").setup(
-    --             {
-    --                 style = "night",
-    --                 on_colors = function(colors)
-    --                     colors.border = "#565f89"
-    --                 end
-    --             }
-    --         )
-    --
-    --         vim.cmd [[colorscheme tokyonight]]
-    --     end
-    -- },
     {
         "nvim-lualine/lualine.nvim",
         lazy = false,
@@ -82,14 +64,6 @@ local plugins = {
             }
         end
     },
-    -- {
-    --     "williamboman/mason-lspconfig.nvim",
-    --     config = function()
-    --         require("mason-lspconfig").setup {
-    --             ensure_installed = {"lua_ls", "tsserver", "pyright"}
-    --         }
-    --     end
-    -- },
     {
         "neovim/nvim-lspconfig",
         config = function()
@@ -101,10 +75,11 @@ local plugins = {
         event = "InsertEnter",
         dependencies = {
             {
-                -- snippet plugin
                 "L3MON4D3/LuaSnip",
-                dependencies = "rafamadriz/friendly-snippets",
-                opts = {history = true, updateevents = "TextChanged,TextChangedI"}
+                -- follow latest release.
+                version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+                -- install jsregexp (optional!).
+                build = "make install_jsregexp"
             },
             -- autopairing of (){}[] etc
             {
@@ -164,7 +139,6 @@ local plugins = {
         lazy = false
     },
     -- Blank line for Indent
-
     {"lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {}},
     -- Surround actions
     {
@@ -190,12 +164,6 @@ local plugins = {
         config = function()
             require("focus").setup()
         end
-    },
-    -- Show all troubles of the project
-    {
-        "folke/trouble.nvim",
-        dependencies = {"nvim-tree/nvim-web-devicons"},
-        opts = {}
     },
     -- Search in entire project
     {
@@ -261,17 +229,6 @@ local plugins = {
             }
         end
     },
-    -- Annotate at the end of a closing tag/bracket/parenthesis/etc
-    {
-        "code-biscuits/nvim-biscuits",
-        config = function()
-            require("nvim-biscuits").setup(
-                {
-                    cursor_line_only = true
-                }
-            )
-        end
-    },
     -- Close buffers after 1 minute of inactivity
     {
         "chrisgrieser/nvim-early-retirement",
@@ -281,22 +238,6 @@ local plugins = {
         },
         event = "VeryLazy"
     },
-    -- -- Go utils
-    -- {
-    --     "ray-x/go.nvim",
-    --     dependencies = {
-    --         -- optional packages
-    --         "ray-x/guihua.lua",
-    --         "neovim/nvim-lspconfig",
-    --         "nvim-treesitter/nvim-treesitter"
-    --     },
-    --     config = function()
-    --         require("go").setup()
-    --     end,
-    --     event = {"CmdlineEnter"},
-    --     ft = {"go", "gomod"},
-    --     build = ':lua require("go.install").update_all_sync()' -- if you need to install/update all binaries
-    -- },
     -- Replace message, cmdliine, popupmenu
     {
         "folke/noice.nvim",
@@ -324,6 +265,13 @@ local plugins = {
         opts = {},
         config = function(_, opts)
             require "lsp_signature".setup(opts)
+        end
+    },
+    --- Show Color of hex,...
+    {
+        "norcalli/nvim-colorizer.lua",
+        config = function()
+            require "colorizer".setup()
         end
     }
 }
