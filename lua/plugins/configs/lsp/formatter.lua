@@ -15,6 +15,9 @@ require("formatter").setup {
         go = {
             require("formatter.filetypes.go").golines
         },
+        css = {
+            require("formatter.filetypes.css").prettier
+        },
         html = {
             require("formatter.filetypes.html").prettier
         },
