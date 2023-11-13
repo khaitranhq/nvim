@@ -35,6 +35,12 @@ lspconfig.clangd.setup {
 lspconfig.bashls.setup {
     capabilities = capabilities
 }
+lspconfig.cssls.setup {
+    capabilities = capabilities
+}
+lspconfig.jsonls.setup {
+    capabilities = capabilities
+}
 
 -- Use LspAttach autocommand to only map the following keys
 -- after the language server attaches to the current buffer
