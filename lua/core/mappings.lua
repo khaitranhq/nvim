@@ -105,12 +105,12 @@ local dap = require("dap")
 M.dap = {
     plugin = true,
     n = {
-        ["<leader>dbn"] = {dap.step_over, "Debug: next step"},
-        ["<leader>dbb"] = {dap.step_back, "Debug: previous step"},
-        ["<leader>dbk"] = {dap.toggle_breakpoint, "Debug: toggle a breakpoint"},
-        ["<leader>dbt"] = {dap.terminate, "Debug: Terminate"},
-        ["<leader>dbr"] = {dap.restart, "Debug: restart"},
-        ["<leader>dbs"] = {dap.continue, "Debug: continue"}
+        ["<leader>dn"] = {dap.step_over, "Debug: next step"},
+        ["<leader>db"] = {dap.step_back, "Debug: previous step"},
+        ["<leader>dk"] = {dap.toggle_breakpoint, "Debug: toggle a breakpoint"},
+        ["<leader>dt"] = {dap.terminate, "Debug: Terminate"},
+        ["<leader>dr"] = {dap.restart, "Debug: restart"},
+        ["<leader>ds"] = {dap.continue, "Debug: continue"}
     }
 }
 
@@ -126,6 +126,19 @@ M.notify = {
     plugin = true,
     n = {
         ["<leader>nh"] = {notify.dismiss, "Dismiss all notifications"}
+    }
+}
+
+local blame = require("blame")
+M.blame = {
+    plugin = true,
+    n = {
+        ["<leader>gb"] = {
+            function()
+                vim.cmd("ToggleBlame virtual")
+            end,
+            "Show Git blame"
+        }
     }
 }
 
