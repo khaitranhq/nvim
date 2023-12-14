@@ -273,6 +273,13 @@ local plugins = {
         config = function()
             require "colorizer".setup()
         end
+    },
+    --- Git blame
+    {
+        "FabijanZulj/blame.nvim",
+        config = function()
+            require("blame").setup()
+        end
     }
 }
 
