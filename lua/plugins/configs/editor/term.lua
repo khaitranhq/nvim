@@ -31,3 +31,8 @@ local lazygit = Terminal:new({cmd = "lazygit", hidden = true, direction = "float
 function _lazygit_toggle()
     lazygit:toggle()
 end
+
+local aicommits = Terminal:new({cmd = "aicommits", hidden = true, direction = "float"})
+function _aicommits_toggle()
+		aicommits:toggle()
+end

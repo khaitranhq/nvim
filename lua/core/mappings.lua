@@ -117,7 +117,8 @@ M.dap = {
 M.term = {
     plugin = true,
     n = {
-        ["<leader>lg"] = {_lazygit_toggle, "Open lazygit"}
+        ["<leader>lg"] = {_lazygit_toggle, "Open lazygit"},
+        ["<leader>gc"] = {_aicommits_toggle, "Open AICommits"}
     }
 }
 
