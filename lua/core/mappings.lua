@@ -129,7 +129,6 @@ M.notify = {
     }
 }
 
-local blame = require("blame")
 M.blame = {
     plugin = true,
     n = {
