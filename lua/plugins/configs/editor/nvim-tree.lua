@@ -49,7 +49,7 @@ nvimtree.setup(
             end
         },
         git = {
-            enable = false
+            enable = true
         }
         -- filters = {
         --   custom = { "^.git$" },
