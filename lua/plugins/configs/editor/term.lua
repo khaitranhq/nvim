@@ -32,7 +32,7 @@ function _lazygit_toggle()
     lazygit:toggle()
 end
 
-local aicommits = Terminal:new({cmd = "aicommits", hidden = true, direction = "float"})
+local aicommits = Terminal:new({cmd = "git commit", hidden = true, direction = "float"})
 function _aicommits_toggle()
-		aicommits:toggle()
+    aicommits:toggle()
 end
