@@ -47,4 +47,4 @@ require("formatter").setup {
         }
     }
 }
-vim.cmd [[autocmd BufWritePost * FormatWrite]]
+-- vim.cmd [[autocmd BufWritePost * FormatWrite]]
