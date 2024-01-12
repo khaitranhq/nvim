@@ -50,12 +50,9 @@ nvimtree.setup(
         },
         git = {
             enable = true
+        },
+        filters = {
+            git_ignored = false
         }
-        -- filters = {
-        --   custom = { "^.git$" },
-        -- },
-        -- renderer = {
-        --   indent_width = 1,
-        -- },
     }
 )
