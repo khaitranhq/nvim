@@ -16,7 +16,12 @@ lspconfig.pyright.setup {
     capabilities = capabilities
 }
 lspconfig.tsserver.setup {
-    capabilities = capabilities
+    capabilities = capabilities,
+    init_options = {
+        preferences = {
+            disableSuggestions = true
+        }
+    }
 }
 lspconfig.gopls.setup {
     capabilities = capabilities,
