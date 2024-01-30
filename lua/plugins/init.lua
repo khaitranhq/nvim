@@ -280,6 +280,13 @@ local plugins = {
         config = function()
             require("blame").setup()
         end
+    },
+    --- Nvim linter
+    {
+        "mfussenegger/nvim-lint",
+        config = function()
+            require("plugins.configs.lsp.nvim-lint")
+        end
     }
 }
 
