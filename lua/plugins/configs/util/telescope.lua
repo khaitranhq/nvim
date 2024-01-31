@@ -16,3 +16,9 @@ require("telescope").setup {
         }
     }
 }
+
+local telescope_builtin = require("telescope.builtin")
+function search_with_selected_text()
+    local text = vim.getVisualSelection()
+    telescope_builtin.live_grep({default_text = text})
+end

@@ -35,6 +35,9 @@ M.telescope = {
         ["<C-g>"] = {telescope_builtin.live_grep, "Search text globally"},
         ["<leader>fb"] = {telescope_builtin.buffers, "Search buffers"},
         ["<leader>fg"] = {telescope_builtin.current_buffer_fuzzy_find, "Search text in current buffer"}
+    },
+    v = {
+        ["<leader>fs"] = {search_with_selected_text, "Search with selected text"}
     }
 }
 

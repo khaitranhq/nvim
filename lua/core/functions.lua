@@ -3,3 +3,16 @@ local show_current_buffer_directory = function()
 end
 
 vim.api.nvim_create_user_command("BufDir", show_current_buffer_directory, {})
+
+function vim.getVisualSelection()
+    vim.cmd('noau normal! "vy"')
+    local text = vim.fn.getreg("v")
+    vim.fn.setreg("v", {})
+
+    text = string.gsub(text, "\n", "")
+    if #text > 0 then
+        return text
+    else
+        return ""
+    end
+end
