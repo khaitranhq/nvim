@@ -60,7 +60,7 @@ vim.api.nvim_create_autocmd(
             -- Buffer local mappings.
             -- See `:help vim.lsp.*` for documentation on any of the below functions
             local opt = {buffer = ev.buf}
-            vim.keymap.set("n", "gd", vim.lsp.buf.definition, opt)
+            vim.keymap.set("n", "df", vim.lsp.buf.definition, opt)
         end
     }
 )

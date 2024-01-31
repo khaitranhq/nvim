@@ -88,13 +88,13 @@ local goto_preview = require("goto-preview")
 M.goto_preview = {
     plugin = true,
     n = {
-        ["<leader>gpd"] = {goto_preview.goto_preview_definition, "Show preview definition in float window"},
-        ["<leader>gpt"] = {goto_preview.goto_preview_type_definition, "Show preview type definition in float window"},
-        ["<leader>gpi"] = {
+        ["<leader>dpf"] = {goto_preview.goto_preview_definition, "Show preview definition in float window"},
+        ["<leader>dpt"] = {goto_preview.goto_preview_type_definition, "Show preview type definition in float window"},
+        ["<leader>dpi"] = {
             goto_preview.goto_preview_implementation,
             "Show preview implementation definition in float window"
         },
-        ["<leader>gpr"] = {
+        ["<leader>dpr"] = {
             goto_preview.goto_preview_references,
             "Show preview references definition in float window"
         }
@@ -114,14 +114,6 @@ M.dap = {
     }
 }
 
-M.term = {
-    plugin = true,
-    n = {
-        ["<leader>lg"] = {_lazygit_toggle, "Open lazygit"},
-        ["<leader>gc"] = {_aicommits_toggle, "Open AICommits"}
-    }
-}
-
 local notify = require("notify")
 M.notify = {
     plugin = true,
@@ -130,15 +122,15 @@ M.notify = {
     }
 }
 
-M.blame = {
+local gitsigns = require("gitsigns")
+M.git = {
     plugin = true,
     n = {
-        ["<leader>gb"] = {
-            function()
-                vim.cmd("ToggleBlame virtual")
-            end,
-            "Show Git blame"
-        }
+        ["<leader>gtb"] = {gitsigns.toggle_current_line_blame, "Toggle git blame on lines"},
+        ["<leader>gs"] = {"<cmd>Git<CR>", "Open Git"},
+        ["<leader>gc"] = {"<cmd>Git commit<CR>", "Git commit"},
+        ["<leader>gb"] = {"<cmd>Git blame<CR>", "Git blame"},
+        ["<leader>gd"] = {"<cmd>Gdiffsplit<CR>", "Git diff split"}
     }
 }
 

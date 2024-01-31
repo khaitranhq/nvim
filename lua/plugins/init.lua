@@ -274,19 +274,22 @@ local plugins = {
             require "colorizer".setup()
         end
     },
-    --- Git blame
-    {
-        "FabijanZulj/blame.nvim",
-        config = function()
-            require("blame").setup()
-        end
-    },
     --- Nvim linter
     {
         "mfussenegger/nvim-lint",
         config = function()
             require("plugins.configs.lsp.nvim-lint")
         end
+    },
+    --- Git
+    {
+        "lewis6991/gitsigns.nvim",
+        config = function()
+            require("gitsigns").setup()
+        end
+    },
+    {
+        "tpope/vim-fugitive"
     }
 }
 
