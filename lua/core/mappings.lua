@@ -128,9 +128,9 @@ M.git = {
     n = {
         ["<leader>gtb"] = {gitsigns.toggle_current_line_blame, "Toggle git blame on lines"},
         ["<leader>gs"] = {"<cmd>Git<CR>", "Open Git"},
-        ["<leader>gc"] = {"<cmd>Git commit<CR>", "Git commit"},
         ["<leader>gb"] = {"<cmd>Git blame<CR>", "Git blame"},
-        ["<leader>gd"] = {"<cmd>Gdiffsplit<CR>", "Git diff split"}
+        ["<leader>gd"] = {"<cmd>Gdiffsplit<CR>", "Git diff split"},
+        ["<leader>gc"] = {_aicommits_toggle, "Git commit"}
     }
 }
 
