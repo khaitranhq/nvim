@@ -61,6 +61,7 @@ vim.api.nvim_create_autocmd(
             -- See `:help vim.lsp.*` for documentation on any of the below functions
             local opt = {buffer = ev.buf}
             vim.keymap.set("n", "df", vim.lsp.buf.definition, opt)
+            vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opt)
         end
     }
 )
