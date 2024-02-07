@@ -291,6 +291,10 @@ local plugins = {
     },
     {
         "tpope/vim-fugitive"
+    },
+    {
+        "stevearc/dressing.nvim",
+        opts = {}
     }
 }
 
