@@ -20,6 +20,7 @@ nvimtree.setup(
         disable_netrw = true,
         hijack_netrw = true,
         respect_buf_cwd = true,
+        reload_on_bufenter = true,
         sync_root_with_cwd = true,
         view = {
             relativenumber = true,
