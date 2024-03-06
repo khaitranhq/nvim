@@ -183,9 +183,12 @@ local plugins = {
     -- Preview markdown
     {
         "iamcco/markdown-preview.nvim",
-        config = function()
-            vim.fn["mkdp#util#install"]()
-        end
+        cmd = {"MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop"},
+        build = "cd app && nvm use 20 && npm install",
+        init = function()
+            vim.g.mkdp_filetypes = {"markdown"}
+        end,
+        ft = {"markdown"}
     },
     -- Debug
     {
