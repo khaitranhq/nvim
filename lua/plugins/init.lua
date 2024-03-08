@@ -31,7 +31,8 @@ local plugins = {
                     theme = "catppuccin"
                 },
                 sections = {
-                    lualine_b = {"diagnostics"}
+                    lualine_b = {"diagnostics"},
+                    lualine_z = {"selectioncount", "location"}
                 }
             }
         end
