@@ -46,6 +46,12 @@ lspconfig.cssls.setup {
 lspconfig.jsonls.setup {
     capabilities = capabilities
 }
+lspconfig.dockerls.setup {
+    capabilities = capabilities
+}
+lspconfig.docker_compose_language_service.setup {
+    capabilities = capabilities
+}
 
 -- Use LspAttach autocommand to only map the following keys
 -- after the language server attaches to the current buffer
