@@ -49,6 +49,21 @@ nvimtree.setup(
                 return math.floor(vim.opt.columns:get() * WIDTH_RATIO)
             end
         },
+        renderer = {
+            icons = {
+                glyphs = {
+                    git = {
+                        unstaged = "",
+                        staged = "✓",
+                        unmerged = "",
+                        renamed = "",
+                        untracked = "",
+                        deleted = "",
+                        ignored = "◌"
+                    }
+                }
+            }
+        },
         git = {
             enable = true
         },
