@@ -192,15 +192,15 @@ local plugins = {
         ft = {"markdown"}
     },
     -- Debug
-    {
-        "rcarriga/nvim-dap-ui",
-        dependencies = {
-            "mfussenegger/nvim-dap"
-        },
-        config = function()
-            require("plugins.configs.lsp.nvim-dap")
-        end
-    },
+    -- {
+    --     "rcarriga/nvim-dap-ui",
+    --     dependencies = {
+    --         "mfussenegger/nvim-dap"
+    --     },
+    --     config = function()
+    --         require("plugins.configs.lsp.nvim-dap")
+    --     end
+    -- },
     {
         "folke/todo-comments.nvim",
         dependencies = {"nvim-lua/plenary.nvim"},
