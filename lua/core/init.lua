@@ -19,6 +19,14 @@ opt.termguicolors = true
 opt.foldmethod = "indent"
 opt.foldlevel = 20
 
+-- set undodir
+UNDODIR = "/home/khaitran/.local/share/nvim/undo/"
+if vim.fn.isdirectory(UNDODIR) == 0 then
+	vim.fn.mkdir(UNDODIR, "p", "0o700")
+end
+vim.opt.undodir = UNDODIR
+vim.opt.undofile = true
+
 -------------------------global-------------------------
 vim.g.mapleader = " "
 vim.g.loaded_netrw = 1
