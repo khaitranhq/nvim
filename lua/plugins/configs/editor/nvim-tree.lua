@@ -72,3 +72,14 @@ nvimtree.setup(
         }
     }
 )
+
+function change_nvim_tree_view_type()
+    -- Get the current configuration
+		local config = nvimtree.config
+
+    -- Modify options as needed
+    config.view.float.enable = not config.view.float.enable
+
+    -- Update the options
+    require('nvim-tree').setup(config)
+end

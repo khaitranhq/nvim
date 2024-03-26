@@ -13,7 +13,7 @@ M.general = {
         ["qq"] = {"<cmd>qa<CR>", "Quit Neovim"},
         -- short key to run commands
         [";"] = {":", "Short key to run commands"},
-        ["<leader>bd"] = {vim.cmd.BufDir, "Show directory of current buffer"}
+        ["<leader>pwd"] = {vim.cmd.BufDir, "Show directory of current buffer"}
     },
     v = {
         ["//"] = {'y/\\V<C-R>=escape(@",\'/\')<CR><CR>', "Search with selected text"}
@@ -23,7 +23,8 @@ M.general = {
 M.nvimtree = {
     plugin = true,
     n = {
-        ["<C-b>"] = {"<cmd>NvimTreeToggle<CR>", "Toggle nvim tree"}
+        ["<C-b>"] = {"<cmd>NvimTreeToggle<CR>", "Toggle nvim tree"},
+				["<leader>b"] = {change_nvim_tree_view_type, "Toggle nvim tree"}
     }
 }
 
