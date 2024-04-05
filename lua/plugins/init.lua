@@ -46,9 +46,6 @@ local plugins = {
             require("plugins.configs.editor.bufferline")
         end
     },
-    -- {
-    --     "tpope/vim-fugitive"
-    -- },
     {
         "nvim-telescope/telescope.nvim",
         tag = "0.1.2",
@@ -127,12 +124,6 @@ local plugins = {
             require("plugins.configs.lsp.tresitter")
         end
     },
-    -- {
-    --     "folke/which-key.nvim",
-    --     config = function()
-    --         require("which-key").setup()
-    --     end
-    -- },
     {
         "numToStr/Comment.nvim",
         opts = {},
@@ -289,29 +280,11 @@ local plugins = {
     },
     --- Git
     {
-        "lewis6991/gitsigns.nvim",
-        config = function()
-            require("gitsigns").setup()
-        end
-    },
-    {
         "tpope/vim-fugitive"
     },
     {
         "stevearc/dressing.nvim",
         opts = {}
-    },
-    {
-        "ray-x/go.nvim",
-        dependencies = {
-            "ray-x/guihua.lua"
-        },
-        config = function()
-            require("go").setup()
-        end,
-        event = {"CmdlineEnter"},
-        ft = {"go", "gomod"},
-        build = ':lua require("go.install").update_all_sync()' -- if you need to install/update all binaries
     },
     {
         "Exafunction/codeium.nvim",

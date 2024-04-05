@@ -126,11 +126,9 @@ M.notify = {
     }
 }
 
-local gitsigns = require("gitsigns")
 M.git = {
     plugin = true,
     n = {
-        ["<leader>gtb"] = {gitsigns.toggle_current_line_blame, "Toggle git blame on lines"},
         ["<leader>gs"] = {"<cmd>Git<CR>", "Open Git"},
         ["<leader>gb"] = {"<cmd>Git blame<CR>", "Git blame"},
         ["<leader>gd"] = {"<cmd>Gdiffsplit<CR>", "Git diff split"},
