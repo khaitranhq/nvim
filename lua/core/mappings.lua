@@ -23,8 +23,8 @@ M.general = {
 M.nvimtree = {
     plugin = true,
     n = {
-        ["<C-b>"] = {"<cmd>NvimTreeToggle<CR>", "Toggle nvim tree"},
-				["<leader>b"] = {change_nvim_tree_view_type, "Toggle nvim tree"}
+        ["<leader>b"] = {"<cmd>NvimTreeToggle<CR>", "Toggle nvim tree"},
+				["<leader>cbv"] = {change_nvim_tree_view_type, "Toggle nvim tree"}
     }
 }
 
