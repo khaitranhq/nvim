@@ -188,16 +188,16 @@ local plugins = {
             require("goto-preview").setup {}
         end
     },
-    -- Preview markdown
-    {
-        "iamcco/markdown-preview.nvim",
-        cmd = {"MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop"},
-        build = "cd app && nvm use 20 && npm install",
-        init = function()
-            vim.g.mkdp_filetypes = {"markdown"}
-        end,
-        ft = {"markdown"}
-    },
+    -- -- Preview markdown
+    -- {
+    --     "iamcco/markdown-preview.nvim",
+    --     cmd = {"MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop"},
+    --     build = "cd app && nvm use 20 && npm install",
+    --     init = function()
+    --         vim.g.mkdp_filetypes = {"markdown"}
+    --     end,
+    --     ft = {"markdown"}
+    -- },
     -- Debug
     -- {
     --     "rcarriga/nvim-dap-ui",
