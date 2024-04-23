@@ -143,4 +143,11 @@ M.term = {
     }
 }
 
+M.format = {
+	plugin = true,
+	n = {
+		["<leader>fm"] = {format, "Format file"}
+	}
+}
+
 return M

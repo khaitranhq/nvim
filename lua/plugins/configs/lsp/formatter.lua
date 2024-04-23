@@ -48,3 +48,6 @@ require("formatter").setup {
     }
 }
 -- vim.cmd [[autocmd BufWritePost * FormatWrite]]
+function format()
+	vim.api.nvim_command('FormatWrite')
+end
