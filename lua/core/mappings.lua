@@ -150,4 +150,11 @@ M.format = {
 	}
 }
 
+M.calltree = {
+	plugin=true,
+	n = {
+		["<leader>ct"] = { vim.lsp.buf.incoming_calls, "Call Tree" }
+	}
+}
+
 return M
