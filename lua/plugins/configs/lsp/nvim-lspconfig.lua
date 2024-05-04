@@ -1,3 +1,6 @@
+require("neodev").setup({
+  -- add any options here, or leave empty to use the default settings
+})
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 local lspconfig = require("lspconfig")
 local util = require "lspconfig/util"
@@ -67,7 +70,6 @@ vim.api.nvim_create_autocmd(
             -- See `:help vim.lsp.*` for documentation on any of the below functions
             local opt = {buffer = ev.buf}
             vim.keymap.set("n", "df", vim.lsp.buf.definition, opt)
-            vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opt)
         end
     }
 )

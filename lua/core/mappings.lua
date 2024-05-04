@@ -24,7 +24,7 @@ M.nvimtree = {
     plugin = true,
     n = {
         ["<leader>b"] = {"<cmd>NvimTreeToggle<CR>", "Toggle nvim tree"},
-				["<leader>cbv"] = {change_nvim_tree_view_type, "Toggle nvim tree"}
+        ["<leader>cbv"] = {change_nvim_tree_view_type, "Toggle nvim tree"}
     }
 }
 
@@ -32,10 +32,10 @@ local telescope_builtin = require("telescope.builtin")
 M.telescope = {
     plugin = true,
     n = {
-        ["<C-f>"] = {telescope_builtin.find_files, "Find files"},
-        ["<C-g>"] = {telescope_builtin.live_grep, "Search text globally"},
+        ["<leader>ff"] = {telescope_builtin.find_files, "Find files"},
+        ["<leader>fg"] = {telescope_builtin.live_grep, "Search text globally"},
         ["<leader>fb"] = {telescope_builtin.buffers, "Search buffers"},
-        ["<leader>fg"] = {telescope_builtin.current_buffer_fuzzy_find, "Search text in current buffer"}
+        ["<leader>fc"] = {telescope_builtin.current_buffer_fuzzy_find, "Search text in current buffer"}
     },
     v = {
         ["<leader>fs"] = {search_with_selected_text, "Search with selected text"}
@@ -88,23 +88,6 @@ M.spectre = {
     }
 }
 
-local goto_preview = require("goto-preview")
-M.goto_preview = {
-    plugin = true,
-    n = {
-        ["<leader>dpf"] = {goto_preview.goto_preview_definition, "Show preview definition in float window"},
-        ["<leader>dpt"] = {goto_preview.goto_preview_type_definition, "Show preview type definition in float window"},
-        ["<leader>dpi"] = {
-            goto_preview.goto_preview_implementation,
-            "Show preview implementation definition in float window"
-        },
-        ["<leader>dpr"] = {
-            goto_preview.goto_preview_references,
-            "Show preview references definition in float window"
-        }
-    }
-}
-
 -- local dap = require("dap")
 -- M.dap = {
 --     plugin = true,
@@ -132,29 +115,38 @@ M.git = {
         ["<leader>gs"] = {"<cmd>Git<CR>", "Open Git"},
         ["<leader>gb"] = {"<cmd>Git blame<CR>", "Git blame"},
         ["<leader>gd"] = {"<cmd>Gdiffsplit<CR>", "Git diff split"},
-        ["<leader>gc"] = {_aicommits_toggle, "Git commit"}
+        ["<leader>gcm"] = {_aicommits_toggle, "Git commit"},
+        ["<leader>gcc"] = {"<cmd>GitConflictChooseOurs<CR>", "Git conflict: select current change"},
+        ["<leader>gci"] = {"<cmd>GitConflictChooseTheirs<CR>", "Git conflict: select incomming change"},
+        ["<leader>gcb"] = {"<cmd>GitConflictChooseBoth<CR>", "Git conflict: select both changes"},
+        ["<leader>gcx"] = {"<cmd>GitConflictChooseNone<CR>", "Git conflict: select none of the changes"},
+        ["<leader>gcn"] = {"<cmd>GitConflictNextConflict<CR>", "Git conflict: select next conflict"},
+        ["<leader>gcp"] = {"<cmd>GitConflictPrevConflict<CR>", "Git conflict: select previous conflict"}
     }
 }
 
 M.term = {
     plugin = true,
     n = {
-        ["<leader>lg"] = {_lazygit_toggle, "Open lazygit"}
+        ["<leader>tg"] = {_lazygit_toggle, "Open lazygit"}
     }
 }
 
 M.format = {
-	plugin = true,
-	n = {
-		["<leader>fm"] = {format, "Format file"}
-	}
+    plugin = true,
+    n = {
+        ["<leader>fm"] = {format, "Format file"}
+    }
 }
 
-M.calltree = {
-	plugin=true,
-	n = {
-		["<leader>ct"] = { vim.lsp.buf.incoming_calls, "Call Tree" }
-	}
+M.lspsaga = {
+    plugin = true,
+    n = {
+        ["<leader>lci"] = {"<cmd>Lspsaga incoming_calls<CR>", "Incoming call"},
+        ["<leader>lco"] = {"<cmd>Lspsaga outgoing_calls<CR>", "Outgoing call"},
+        ["<leader>lca"] = {"<cmd>Lspsaga code_action<CR>", "Call action"},
+        ["<leader>lgd"] = {"<cmd>Lspsaga peek_definition<CR>", "Peek definition"}
+    }
 }
 
 return M
