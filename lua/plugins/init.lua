@@ -77,6 +77,7 @@ local plugins = {
             )
         end
     },
+    {"folke/neodev.nvim", opts = {}},
     {
         "neovim/nvim-lspconfig",
         config = function()
@@ -180,13 +181,6 @@ local plugins = {
         dependencies = {
             "nvim-lua/plenary.nvim"
         }
-    },
-    -- Preview definition using LSP
-    {
-        "rmagatti/goto-preview",
-        config = function()
-            require("goto-preview").setup {}
-        end
     },
     -- -- Preview markdown
     -- {
@@ -325,31 +319,22 @@ local plugins = {
         }
     },
     {
-        "ldelossa/litee.nvim",
-        event = "VeryLazy",
-        opts = {
-            notify = {enabled = false},
-            panel = {
-                orientation = "bottom",
-                panel_size = 10
-            }
-        },
-        config = function(_, opts)
-            require("litee.lib").setup(opts)
-        end
+        "nvimdev/lspsaga.nvim",
+        config = function()
+            require("lspsaga").setup(
+                {
+                    lightbulb = {
+                        sign = false
+                    }
+                }
+            )
+        end,
+        dependencies = {
+            "nvim-treesitter/nvim-treesitter", -- optional
+            "nvim-tree/nvim-web-devicons" -- optional
+        }
     },
-    {
-        "ldelossa/litee-calltree.nvim",
-        dependencies = "ldelossa/litee.nvim",
-        event = "VeryLazy",
-        opts = {
-            on_open = "panel",
-            map_resize_keys = false
-        },
-        config = function(_, opts)
-            require("litee.calltree").setup(opts)
-        end
-    }
+    {"akinsho/git-conflict.nvim", version = "*", config = true}
 }
 
 require("lazy").setup(plugins)
