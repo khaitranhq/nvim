@@ -28,7 +28,7 @@ M.general = {
 M.nvimtree = {
     n = {
         ["<leader>b"] = {"<cmd>NvimTreeToggle<CR>", "Toggle nvim tree"},
-        ["<leader>bv"] = {vim.nvim_tree_change_view_type, "Toggle nvim tree"}
+        ["<leader>cbv"] = {vim.nvim_tree_change_view_type, "Toggle nvim tree"}
     }
 }
 
