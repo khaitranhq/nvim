@@ -13,7 +13,12 @@ M.general = {
         ["qq"] = {"<cmd>qa<CR>", "Quit Neovim"},
         -- short key to run commands
         [";"] = {":", "Short key to run commands"},
-        ["<leader>pwd"] = {vim.cmd.BufDir, "Show directory of current buffer"}
+        ["<leader>pwd"] = {
+            function()
+                print("Current directory: " .. vim.api.nvim_buf_get_name(0))
+            end,
+            "Show directory of current buffer"
+        }
     },
     v = {
         ["//"] = {'y/\\V<C-R>=escape(@",\'/\')<CR><CR>', "Search with selected text"}
@@ -21,16 +26,14 @@ M.general = {
 }
 
 M.nvimtree = {
-    plugin = true,
     n = {
         ["<leader>b"] = {"<cmd>NvimTreeToggle<CR>", "Toggle nvim tree"},
-        ["<leader>cbv"] = {change_nvim_tree_view_type, "Toggle nvim tree"}
+        ["<leader>cbv"] = {vim.nvim_tree_change_view_type, "Toggle nvim tree"}
     }
 }
 
 local telescope_builtin = require("telescope.builtin")
 M.telescope = {
-    plugin = true,
     n = {
         ["<leader>ff"] = {telescope_builtin.find_files, "Find files"},
         ["<leader>fg"] = {telescope_builtin.live_grep, "Search text globally"},
@@ -38,12 +41,11 @@ M.telescope = {
         ["<leader>fc"] = {telescope_builtin.current_buffer_fuzzy_find, "Search text in current buffer"}
     },
     v = {
-        ["<leader>fs"] = {search_with_selected_text, "Search with selected text"}
+        ["<leader>fs"] = {vim.search_with_selected_text, "Search with selected text"}
     }
 }
 
 M.lsp = {
-    plugin = true,
     n = {
         ["<leader>rn"] = {vim.lsp.buf.rename, "Rename variable at cursor"},
         ["[d"] = {vim.diagnostic.goto_prev, "Previous diagnostic position"},
@@ -55,67 +57,25 @@ M.lsp = {
 
 local hop = require("hop")
 M.hop = {
-    plugin = true,
     n = {
         ["<leader>hp"] = {hop.hint_patterns, "Move cursor from searching pattern result"},
         ["<leader>hw"] = {hop.hint_words, "Move cursor to specific words"}
     }
 }
 
-local spectre = require("spectre")
-M.spectre = {
-    plugin = true,
-    n = {
-        ["<leader>S"] = {spectre.toggle, "Toggle Spectre"},
-        ["<leader>sw"] = {
-            function()
-                spectre.open_visual({select_word = true})
-            end,
-            "Search with word in cursor position"
-        },
-        ["<leader>sc"] = {
-            function()
-                spectre.open_file_search({select_word = true})
-            end,
-            "Search on current file"
-        }
-    },
-    v = {
-        ["<leader>sw"] = {
-            spectre.open_visual,
-            "Search with current selected word"
-        }
-    }
-}
-
--- local dap = require("dap")
--- M.dap = {
---     plugin = true,
---     n = {
---         ["<leader>dn"] = {dap.step_over, "Debug: next step"},
---         ["<leader>db"] = {dap.step_back, "Debug: previous step"},
---         ["<leader>dk"] = {dap.toggle_breakpoint, "Debug: toggle a breakpoint"},
---         ["<leader>dt"] = {dap.terminate, "Debug: Terminate"},
---         ["<leader>dr"] = {dap.restart, "Debug: restart"},
---         ["<leader>ds"] = {dap.continue, "Debug: continue"}
---     }
--- }
-
 local notify = require("notify")
 M.notify = {
-    plugin = true,
     n = {
         ["<leader>nh"] = {notify.dismiss, "Dismiss all notifications"}
     }
 }
 
 M.git = {
-    plugin = true,
     n = {
         ["<leader>gs"] = {"<cmd>Git<CR>", "Open Git"},
         ["<leader>gb"] = {"<cmd>Git blame<CR>", "Git blame"},
         ["<leader>gd"] = {"<cmd>Gdiffsplit<CR>", "Git diff split"},
-        ["<leader>gcm"] = {_aicommits_toggle, "Git commit"},
+        ["<leader>gcm"] = {vim.term_aicommits_toggle, "Git commit"},
         ["<leader>gcc"] = {"<cmd>GitConflictChooseOurs<CR>", "Git conflict: select current change"},
         ["<leader>gci"] = {"<cmd>GitConflictChooseTheirs<CR>", "Git conflict: select incomming change"},
         ["<leader>gcb"] = {"<cmd>GitConflictChooseBoth<CR>", "Git conflict: select both changes"},
@@ -126,21 +86,18 @@ M.git = {
 }
 
 M.term = {
-    plugin = true,
     n = {
-        ["<leader>tg"] = {_lazygit_toggle, "Open lazygit"}
+        ["<leader>tg"] = {vim.term_lazygit_toggle, "Open lazygit"}
     }
 }
 
 M.format = {
-    plugin = true,
     n = {
-        ["<leader>fm"] = {format, "Format file"}
+        ["<leader>fm"] = {vim.cmd.FormatWrite, "Format file"}
     }
 }
 
 M.lspsaga = {
-    plugin = true,
     n = {
         ["<leader>lci"] = {"<cmd>Lspsaga incoming_calls<CR>", "Incoming call"},
         ["<leader>lco"] = {"<cmd>Lspsaga outgoing_calls<CR>", "Outgoing call"},
