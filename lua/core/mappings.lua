@@ -51,7 +51,12 @@ M.lsp = {
         ["[d"] = {vim.diagnostic.goto_prev, "Previous diagnostic position"},
         ["]d"] = {vim.diagnostic.goto_next, "Next diagnostic position"},
         ["<leader>e"] = {vim.diagnostic.open_float, "Show diagnostic message in a float window"},
-        ["<leader>de"] = {vim.lsp.buf.hover, "Show definition"}
+        ["<leader>de"] = {vim.lsp.buf.hover, "Show definition in float window"},
+        ["<leader>df"] = {vim.lsp.buf.definition, "Show definition"},
+        ["<leader>lci"] = {"<cmd>Lspsaga incoming_calls<CR>", "Incoming call"},
+        ["<leader>lco"] = {"<cmd>Lspsaga outgoing_calls<CR>", "Outgoing call"},
+        ["<leader>lca"] = {"<cmd>Lspsaga code_action<CR>", "Call action"},
+        ["<leader>lgd"] = {"<cmd>Lspsaga peek_definition<CR>", "Peek definition"}
     }
 }
 
@@ -94,15 +99,6 @@ M.term = {
 M.format = {
     n = {
         ["<leader>fm"] = {vim.cmd.FormatWrite, "Format file"}
-    }
-}
-
-M.lspsaga = {
-    n = {
-        ["<leader>lci"] = {"<cmd>Lspsaga incoming_calls<CR>", "Incoming call"},
-        ["<leader>lco"] = {"<cmd>Lspsaga outgoing_calls<CR>", "Outgoing call"},
-        ["<leader>lca"] = {"<cmd>Lspsaga code_action<CR>", "Call action"},
-        ["<leader>lgd"] = {"<cmd>Lspsaga peek_definition<CR>", "Peek definition"}
     }
 }
 

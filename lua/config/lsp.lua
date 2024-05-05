@@ -61,8 +61,6 @@ return {
                 capabilities = capabilities
             }
 
-            -- Use LspAttach autocommand to only map the following keys
-            -- after the language server attaches to the current buffer
             vim.api.nvim_create_autocmd(
                 "LspAttach",
                 {
@@ -70,11 +68,6 @@ return {
                     callback = function(ev)
                         -- Enable completion triggered by <c-x><c-o>
                         vim.bo[ev.buf].omnifunc = "v:lua.vim.lsp.omnifunc"
-
-                        -- Buffer local mappings.
-                        -- See `:help vim.lsp.*` for documentation on any of the below functions
-                        local opt = {buffer = ev.buf}
-                        vim.keymap.set("n", "df", vim.lsp.buf.definition, opt)
                     end
                 }
             )
