@@ -13,7 +13,12 @@ M.general = {
         ["qq"] = {"<cmd>qa<CR>", "Quit Neovim"},
         -- short key to run commands
         [";"] = {":", "Short key to run commands"},
-        ["<leader>pwd"] = {vim.cmd.BufDir, "Show directory of current buffer"}
+        ["<leader>pwd"] = {
+            function()
+                print("Current directory: " .. vim.api.nvim_buf_get_name(0))
+            end,
+            "Show directory of current buffer"
+        }
     },
     v = {
         ["//"] = {'y/\\V<C-R>=escape(@",\'/\')<CR><CR>', "Search with selected text"}
@@ -23,7 +28,7 @@ M.general = {
 M.nvimtree = {
     plugin = true,
     n = {
-        ["<leader>b"] = {"<cmd>NvimTreeToggle<CR>", "Toggle nvim tree"},
+        ["<leader>b"] = {vim.cmd.NvimTreeToggle, "Toggle nvim tree"},
         ["<leader>cbv"] = {change_nvim_tree_view_type, "Toggle nvim tree"}
     }
 }
@@ -38,7 +43,7 @@ M.telescope = {
         ["<leader>fc"] = {telescope_builtin.current_buffer_fuzzy_find, "Search text in current buffer"}
     },
     v = {
-        ["<leader>fs"] = {search_with_selected_text, "Search with selected text"}
+        ["<leader>fs"] = {vim.search_with_selected_text, "Search with selected text"}
     }
 }
 

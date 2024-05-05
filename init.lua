@@ -1,4 +1,4 @@
-require "core"
+require "core.general"
 require "core.functions"
 require("core.utils").load_mappings()
 
