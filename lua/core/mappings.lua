@@ -28,7 +28,7 @@ M.general = {
 M.nvimtree = {
     n = {
         ["<leader>b"] = {"<cmd>NvimTreeToggle<CR>", "Toggle nvim tree"},
-        ["<leader>cbv"] = {vim.nvim_tree_change_view_type, "Toggle nvim tree"}
+        ["<leader>bv"] = {vim.nvim_tree_change_view_type, "Toggle nvim tree"}
     }
 }
 
@@ -47,23 +47,22 @@ M.telescope = {
 
 M.lsp = {
     n = {
-        ["<leader>rn"] = {vim.lsp.buf.rename, "Rename variable at cursor"},
-        ["[d"] = {vim.diagnostic.goto_prev, "Previous diagnostic position"},
-        ["]d"] = {vim.diagnostic.goto_next, "Next diagnostic position"},
-        ["<leader>e"] = {vim.diagnostic.open_float, "Show diagnostic message in a float window"},
-        ["<leader>de"] = {vim.lsp.buf.hover, "Show definition in float window"},
-        ["<leader>df"] = {vim.lsp.buf.definition, "Show definition"},
-        ["<leader>lci"] = {"<cmd>Lspsaga incoming_calls<CR>", "Incoming call"},
-        ["<leader>lco"] = {"<cmd>Lspsaga outgoing_calls<CR>", "Outgoing call"},
-        ["<leader>lca"] = {"<cmd>Lspsaga code_action<CR>", "Call action"},
-        ["<leader>lgd"] = {"<cmd>Lspsaga peek_definition<CR>", "Peek definition"}
+        ["<leader>dr"] = {vim.lsp.buf.rename, "Rename variable at cursor"},
+        ["<leader>dn"] = {vim.diagnostic.goto_prev, "Previous diagnostic position"},
+        ["<leader>dp"] = {vim.diagnostic.goto_next, "Next diagnostic position"},
+        ["<leader>de"] = {vim.diagnostic.open_float, "Show diagnostic message in a float window"},
+        ["<leader>dfd"] = {vim.lsp.buf.hover, "Show document in float window"},
+        ["<leader>dd"] = {vim.lsp.buf.definition, "Show definition"},
+        ["<leader>dfe"] = {"<cmd>Lspsaga peek_definition<CR>", "Peek definition"},
+        ["<leader>dci"] = {"<cmd>Lspsaga incoming_calls<CR>", "Incoming call"},
+        ["<leader>dco"] = {"<cmd>Lspsaga outgoing_calls<CR>", "Outgoing call"},
+        ["<leader>dca"] = {"<cmd>Lspsaga code_action<CR>", "Call action"},
     }
 }
 
 local hop = require("hop")
 M.hop = {
     n = {
-        ["<leader>hp"] = {hop.hint_patterns, "Move cursor from searching pattern result"},
         ["<leader>hw"] = {hop.hint_words, "Move cursor to specific words"}
     }
 }
@@ -81,18 +80,13 @@ M.git = {
         ["<leader>gb"] = {"<cmd>Git blame<CR>", "Git blame"},
         ["<leader>gd"] = {"<cmd>Gdiffsplit<CR>", "Git diff split"},
         ["<leader>gcm"] = {vim.term_aicommits_toggle, "Git commit"},
+        ["<leader>gl"] = {vim.term_lazygit_toggle, "Open lazygit"},
         ["<leader>gcc"] = {"<cmd>GitConflictChooseOurs<CR>", "Git conflict: select current change"},
         ["<leader>gci"] = {"<cmd>GitConflictChooseTheirs<CR>", "Git conflict: select incomming change"},
         ["<leader>gcb"] = {"<cmd>GitConflictChooseBoth<CR>", "Git conflict: select both changes"},
         ["<leader>gcx"] = {"<cmd>GitConflictChooseNone<CR>", "Git conflict: select none of the changes"},
         ["<leader>gcn"] = {"<cmd>GitConflictNextConflict<CR>", "Git conflict: select next conflict"},
         ["<leader>gcp"] = {"<cmd>GitConflictPrevConflict<CR>", "Git conflict: select previous conflict"}
-    }
-}
-
-M.term = {
-    n = {
-        ["<leader>tg"] = {vim.term_lazygit_toggle, "Open lazygit"}
     }
 }
 
