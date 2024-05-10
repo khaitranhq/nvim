@@ -29,8 +29,6 @@ vim.opt.undofile = true
 
 -------------------------global-------------------------
 vim.g.mapleader = " "
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
 
 vim.o.autoread = true
 vim.api.nvim_create_autocmd(
