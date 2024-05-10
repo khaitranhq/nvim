@@ -18,7 +18,8 @@ M.general = {
                 print("Current directory: " .. vim.api.nvim_buf_get_name(0))
             end,
             "Show directory of current buffer"
-        }
+        },
+				["<leader>/"] = {"<cmd>nohlsearch<CR>", "Disable search highlight"}
     },
     v = {
         ["//"] = {'y/\\V<C-R>=escape(@",\'/\')<CR><CR>', "Search with selected text"}
