@@ -61,13 +61,6 @@ M.lsp = {
     }
 }
 
-local hop = require("hop")
-M.hop = {
-    n = {
-        ["<leader>hw"] = {hop.hint_words, "Move cursor to specific words"}
-    }
-}
-
 local notify = require("notify")
 M.notify = {
     n = {
@@ -101,6 +94,12 @@ M.window_picket = {
     n = {
         ["<leader>w"] = {vim.window_picker_select, "Pick window"}
     }
+}
+
+M.leap = {
+	n = {
+		["s"] = {"<Plug>(leap)", "Navigate with leap"}
+	}
 }
 
 return M
