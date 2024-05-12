@@ -19,7 +19,7 @@ M.general = {
             end,
             "Show directory of current buffer"
         },
-				["<leader>/"] = {"<cmd>nohlsearch<CR>", "Disable search highlight"}
+        ["<leader>/"] = {"<cmd>nohlsearch<CR>", "Disable search highlight"}
     },
     v = {
         ["//"] = {'y/\\V<C-R>=escape(@",\'/\')<CR><CR>', "Search with selected text"}
@@ -57,7 +57,7 @@ M.lsp = {
         ["<leader>dfe"] = {"<cmd>Lspsaga peek_definition<CR>", "Peek definition"},
         ["<leader>dci"] = {"<cmd>Lspsaga incoming_calls<CR>", "Incoming call"},
         ["<leader>dco"] = {"<cmd>Lspsaga outgoing_calls<CR>", "Outgoing call"},
-        ["<leader>dca"] = {"<cmd>Lspsaga code_action<CR>", "Call action"},
+        ["<leader>dca"] = {"<cmd>Lspsaga code_action<CR>", "Call action"}
     }
 }
 
@@ -94,6 +94,12 @@ M.git = {
 M.format = {
     n = {
         ["<leader>fm"] = {vim.cmd.FormatWrite, "Format file"}
+    }
+}
+
+M.window_picket = {
+    n = {
+        ["<leader>w"] = {vim.window_picker_select, "Pick window"}
     }
 }
 
