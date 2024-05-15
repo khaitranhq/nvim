@@ -48,7 +48,10 @@ return {
                     },
                     cpp = {
                         require("formatter.filetypes.cpp").clangformat
-                    }
+                    },
+										yaml = {
+                        require("formatter.filetypes.yaml").pyaml
+										}
                 }
             }
         end

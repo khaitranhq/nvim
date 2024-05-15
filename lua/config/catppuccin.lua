@@ -6,7 +6,7 @@ return {
         config = function()
             require("catppuccin").setup(
                 {
-                    flavour = "macchiato"
+                    flavour = "mocha"
                 }
             )
             vim.cmd.colorscheme "catppuccin"
