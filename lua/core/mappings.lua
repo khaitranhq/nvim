@@ -102,4 +102,14 @@ M.leap = {
 	}
 }
 
+M.dap = {
+  n = {
+    ["<leader>ss"] = {vim.cmd.DapContinue, "Run or continue"},
+    ["<leader>sn"] = {vim.cmd.DapStepOver, "Step over"},
+    ["<leader>st"] = {vim.cmd.DapTerminate, "Terminate debug session"},
+    ["<leader>sb"] = {vim.cmd.DapToggleBreakpoint, "Toggle breakpoint"},
+    ["<leader>sc"] = {require('dapui').close, "Close debug ui"}
+  }
+}
+
 return M
