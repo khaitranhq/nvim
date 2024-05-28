@@ -73,7 +73,6 @@ M.git = {
         ["<leader>gs"] = {"<cmd>Git<CR>", "Open Git"},
         ["<leader>gb"] = {"<cmd>Git blame<CR>", "Git blame"},
         ["<leader>gd"] = {"<cmd>Gdiffsplit<CR>", "Git diff split"},
-        ["<leader>gcm"] = {vim.term_aicommits_toggle, "Git commit"},
         ["<leader>gl"] = {vim.term_lazygit_toggle, "Open lazygit"},
         ["<leader>gcc"] = {"<cmd>GitConflictChooseOurs<CR>", "Git conflict: select current change"},
         ["<leader>gci"] = {"<cmd>GitConflictChooseTheirs<CR>", "Git conflict: select incomming change"},
