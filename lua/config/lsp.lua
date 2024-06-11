@@ -26,6 +26,18 @@ return {
             lspconfig.pyright.setup {
                 capabilities = capabilities
             }
+            -- lspconfig.pylsp.setup {
+            --     capabilities = capabilities,
+            --     settings = {
+            --         pylsp = {
+            --             plugins = {
+            --                 rope_autoimport = {
+            --                     enabled = true
+            --                 }
+            --             }
+            --         }
+            --     }
+            -- }
             lspconfig.tsserver.setup {
                 capabilities = capabilities,
                 init_options = {

@@ -57,7 +57,8 @@ M.lsp = {
         ["<leader>dfe"] = {"<cmd>Lspsaga peek_definition<CR>", "Peek definition"},
         ["<leader>dci"] = {"<cmd>Lspsaga incoming_calls<CR>", "Incoming call"},
         ["<leader>dco"] = {"<cmd>Lspsaga outgoing_calls<CR>", "Outgoing call"},
-        ["<leader>dca"] = {"<cmd>Lspsaga code_action<CR>", "Call action"}
+        ["<leader>dca"] = {"<cmd>Lspsaga code_action<CR>", "Call action"},
+        ["<leader>dcm"] = {"<cmd>Lspsaga finder imp<CR>", "Search and preview implementation"}
     }
 }
 

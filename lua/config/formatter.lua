@@ -32,7 +32,7 @@ return {
                         require("formatter.filetypes.json").prettier
                     },
                     python = {
-                        require("formatter.filetypes.python").yapf
+                        require("formatter.filetypes.python").black
                     },
                     sh = {
                         require("formatter.filetypes.sh").shfmt
@@ -49,9 +49,12 @@ return {
                     cpp = {
                         require("formatter.filetypes.cpp").clangformat
                     },
-										yaml = {
+                    yaml = {
                         require("formatter.filetypes.yaml").yamlfmt
-										}
+                    },
+                    terraform = {
+                        require("formatter.filetypes.terraform").terraformfmt
+                    }
                 }
             }
         end
