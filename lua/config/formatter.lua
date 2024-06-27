@@ -54,6 +54,9 @@ return {
                     },
                     terraform = {
                         require("formatter.filetypes.terraform").terraformfmt
+                    },
+                    rust = {
+                        require("formatter.filetypes.rust").rustfmt
                     }
                 }
             }

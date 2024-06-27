@@ -21,7 +21,7 @@ function vim.term_aicommits_toggle()
     local aicommits =
         Terminal:new(
         {
-            cmd = "git commit",
+            cmd = "aicommits",
             hidden = true,
             direction = "float",
             close_on_exit = false

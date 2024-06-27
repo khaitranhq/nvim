@@ -72,6 +72,16 @@ return {
             lspconfig.docker_compose_language_service.setup {
                 capabilities = capabilities
             }
+            lspconfig.rust_analyzer.setup {
+                capabilities = capabilities,
+                settings = {
+                    ["rust-analyzer"] = {
+                        diagnostics = {
+                            enable = false
+                        }
+                    }
+                }
+            }
 
             vim.api.nvim_create_autocmd(
                 "LspAttach",
